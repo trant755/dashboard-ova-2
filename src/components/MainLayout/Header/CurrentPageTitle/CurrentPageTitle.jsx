@@ -8,25 +8,20 @@ export const CurrentPageTitle = ({ open }) => {
   const { page, sub, group } = useParams();
   const navigate = useNavigate();
 
-  console.log("currentPage", currentPage);
-
   useEffect(() => {
     let title = "";
     let prevPage = {};
     if (page) {
       prevPage = pages.find((elem) => elem.id === page);
       title = prevPage.title;
-      console.log("prevPage", prevPage);
     }
     if (sub) {
       prevPage = prevPage.children.find((elem) => elem.id === sub);
       title = prevPage.title;
-      console.log("title", title);
     }
     if (group) {
       prevPage = prevPage.children.find((elem) => elem.id === group);
       title = prevPage.title;
-      console.log("title", title);
     }
     if (!sub && !page && !group) {
       const homePage = pages.find((elem) => elem.id === "home");
@@ -36,7 +31,6 @@ export const CurrentPageTitle = ({ open }) => {
         return;
       }
       title = homePage.children[0].title;
-      console.log("title", title);
     }
 
     setCurrentPage(title);

@@ -1,8 +1,23 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Chart from "react-apexcharts";
 import { Box } from "@mui/material";
 
-export const ChartDonut = ({ chartConfig }) => {
+export const ChartDonut = ({ chartConfig, filter }) => {
+  const [currentSeries, setCurrentSeries] = useState([]);
+
+  useEffect(() => {
+    if (chartConfig?.series) {
+      setCurrentSeries(chartConfig.series);
+    }
+    if (chartConfig?.data) {
+      let newSeries = chartConfig.data;
+      filter.forEach((elem) => {
+        newSeries = newSeries[elem];
+      });
+      setCurrentSeries(newSeries);
+    }
+  }, [chartConfig, filter]);
+
   if (!chartConfig.options) {
     return <div>no data</div>;
   }
@@ -20,7 +35,7 @@ export const ChartDonut = ({ chartConfig }) => {
           backgroundColor: "transparent",
         }}
         options={chartConfig.options}
-        series={chartConfig.series}
+        series={currentSeries}
         type={chartConfig.type}
         height={"100%"}
       />

@@ -1,15 +1,15 @@
 import * as SC from "./AditionalSetings.styled";
-import { SingleInfo } from "./SingleInfo/SingleInfo";
+// import { SingleInfo } from "./SingleInfo/SingleInfo";
 import { FilterSelects } from "./FilterSelects/FilterSelects";
 
-export const AditionalSetings = ({ aditionalSetings }) => {
+export const AditionalSetings = ({ aditionalSetings, setFilter }) => {
   const { singleInfo, filterSelects } = aditionalSetings;
-  if (singleInfo || filterSelects?.length > 1) {
+  if (singleInfo || filterSelects?.length > 0) {
     return (
       <SC.AditionalSetingsWrapper>
-        {singleInfo && <SingleInfo singleInfo={singleInfo} />}
-        {filterSelects && filterSelects.length > 1 && (
-          <FilterSelects filterSelects={filterSelects} />
+        {/* {singleInfo && <SingleInfo singleInfo={singleInfo} />} */}
+        {filterSelects && filterSelects.length > 0 && (
+          <FilterSelects setFilter={setFilter} filterSelects={filterSelects} />
         )}
       </SC.AditionalSetingsWrapper>
     );

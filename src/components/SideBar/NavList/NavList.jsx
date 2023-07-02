@@ -20,8 +20,8 @@ export const NavList = ({ open, setOpen, navRoutes }) => {
         paddingTop: "16px",
       }}
     >
-      {pages.map(({ id, title, menuTitle, icon, children }) =>
-        children.length > 1 ? (
+      {pages.map(({ id, title, menuTitle, type, icon, children }) =>
+        type === "collapse" ? (
           <NavColapse
             key={id}
             id={id}

@@ -16,7 +16,6 @@ const PageLayoute = () => {
   const navigate = useNavigate();
 
   const { page, sub, group } = useParams();
-  console.log(currentPageConfig);
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
@@ -50,6 +49,10 @@ const PageLayoute = () => {
 
       setCurrentPageConfig(data);
     }
+
+    return () => {
+      setCurrentPageConfig(null);
+    };
   }, [currentPage, group, navigate, page, sub]);
 
   useEffect(() => {
@@ -64,11 +67,14 @@ const PageLayoute = () => {
       if (group) {
         data = data.children.find((elem) => elem.id === group);
       }
-      console.log(data);
       data.chartsGroups?.length > 0
         ? setChartsGroups(data.chartsGroups)
         : setChartsGroups([]);
     }
+
+    return () => {
+      setChartsGroups([]);
+    };
   }, [currentPage, group, page, sub]);
 
   useEffect(() => {
@@ -80,6 +86,7 @@ const PageLayoute = () => {
         const index = currentPageConfig.children.findIndex(
           (elem) => elem.id === group
         );
+        if (index < 0) return;
         setValue(index);
       }
     }

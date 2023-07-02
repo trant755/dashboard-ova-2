@@ -1,28 +1,48 @@
-import { Box } from "@mui/material";
+import React, { useState } from "react";
+import { Box, Typography } from "@mui/material";
 import ChartsGenetrators from "./ChartsGenetrators";
 import * as SC from "./ChartConstructor.styled";
 import { AditionalSetings } from "./AditionalSetings/AditionalSetings";
 
 export const ChartConstructor = ({ chart }) => {
-  const TypeChart = ChartsGenetrators[chart.chartConfig.type];
-  const { aditionalSetings } = chart.chartConfig;
+  const [filter, setFilter] = useState([]);
+  if (!chart) {
+    return null;
+  }
+  const TypeChart = ChartsGenetrators[chart?.chartConfig.type];
+  const { aditionalSetings = null } = chart?.chartConfig;
 
   return (
     <SC.CahrtConstructorWrapper>
       <Box
         sx={{
-          width: "100%",
           height: "100%",
+          width: "100%",
           display: "flex",
           flexDirection: "column",
           position: "relative",
           zIndex: "5",
         }}
       >
-        {aditionalSetings && (
-          <AditionalSetings aditionalSetings={aditionalSetings} />
+        {chart.title && (
+          <Box
+            sx={{
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              p: "8px",
+            }}
+          >
+            <Typography sx={{ color: "#fff" }}>{chart.title}</Typography>
+          </Box>
         )}
-        <TypeChart chartConfig={chart.chartConfig} />
+        {aditionalSetings && (
+          <AditionalSetings
+            setFilter={setFilter}
+            aditionalSetings={aditionalSetings}
+          />
+        )}
+        <TypeChart filter={filter} chartConfig={chart.chartConfig} />
       </Box>
     </SC.CahrtConstructorWrapper>
   );

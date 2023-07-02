@@ -68,7 +68,7 @@ const after = {
 export const CahrtConstructorWrapper = styled(Box)((props) => ({
   width: "100%",
   height: "100%",
-  padding: "16px",
+  padding: "6px",
   display: "flex",
   flexDirection: "column",
   backgroundColor: "#5e35b1",

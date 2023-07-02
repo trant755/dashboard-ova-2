@@ -8,20 +8,18 @@ import NotFound from "./pages/NotFound";
 
 function App() {
   return (
-    <Box>
-      <Routes>
-        <Route path="/" element={<SharedLayout />}>
-          <Route index element={<Navigate to={"/home/all"} />} />
-          <Route path="/:page" element={<PageLayoute />}>
-            <Route path="/:page/:sub" element={<PageLayoute />}>
-              <Route path="/:page/:sub/:group" element={<PageLayoute />} />
-            </Route>
+    <Routes>
+      <Route path="/" element={<SharedLayout />}>
+        <Route index element={<Navigate to={"/home/all"} />} />
+        <Route path="/:page" element={<PageLayoute />}>
+          <Route path="/:page/:sub" element={<PageLayoute />}>
+            <Route path="/:page/:sub/:group" element={<PageLayoute />} />
           </Route>
-          <Route path="404" element={<NotFound />} />
-          <Route path="*" element={<NotFound />} />
         </Route>
-      </Routes>
-    </Box>
+        <Route path="404" element={<NotFound />} />
+        <Route path="*" element={<NotFound />} />
+      </Route>
+    </Routes>
   );
 }
 

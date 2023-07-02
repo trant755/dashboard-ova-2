@@ -3,7 +3,6 @@ import Chart from "react-apexcharts";
 import { Box } from "@mui/material";
 
 export const ChartBar = ({ chartConfig }) => {
-  console.log(chartConfig);
   if (!chartConfig.options) {
     return <div>no data</div>;
   }

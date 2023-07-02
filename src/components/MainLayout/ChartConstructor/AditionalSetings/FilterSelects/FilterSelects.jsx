@@ -1,8 +1,10 @@
-import * as React from "react";
+import React, { useState } from "react";
 import { Select } from "./Select";
 import * as SC from "./FilterSelects.styled";
 
-export const FilterSelects = ({ filterSelects }) => {
+export const FilterSelects = ({ filterSelects, setFilter }) => {
+  const [filterValue, setFilterValue] = useState({});
+
   return (
     <SC.FilterSelectsList style={{ marginLeft: "auto" }}>
       {filterSelects.map((option) => (

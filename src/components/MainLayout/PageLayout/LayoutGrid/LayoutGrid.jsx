@@ -7,6 +7,7 @@ import { ChartConstructor } from "../../ChartConstructor/ChartConstructor";
 const containerSizes = {
   xs: { w: 4, h: 1 },
   s: { w: 4, h: 2 },
+  sl: { w: 6, h: 2 },
   m: { w: 4, h: 4 },
   lh: { w: 8, h: 4 },
   lv: { w: 4, h: 8 },
@@ -14,11 +15,15 @@ const containerSizes = {
   fs: { w: 12, h: 8 },
 };
 
-const layout = [{ i: "a", x: 0, y: 0, w: 1, h: 2 }];
+// const layout = [{ i: "a", x: 0, y: 0, w: 1, h: 2 }];
 
-export const LayoutGrid = ({ charts }) => {
+export const LayoutGrid = ({ charts: newCharts }) => {
   const [layout, setLayout] = useState([]);
-  console.log(layout);
+  const [charts, setCharts] = useState([]);
+
+  useEffect(() => {
+    setCharts(newCharts);
+  }, [newCharts]);
 
   useEffect(() => {
     if (!charts) {
@@ -45,7 +50,9 @@ export const LayoutGrid = ({ charts }) => {
     <ResponsiveLayout layout={layout} setLayout={setLayout}>
       {layout.map((elem, index) => (
         <Box key={elem.i}>
-          {charts?.length > 0 && <ChartConstructor chart={charts[index]} />}
+          {charts && charts.length > 0 && (
+            <ChartConstructor chart={charts[index]} />
+          )}
         </Box>
       ))}
     </ResponsiveLayout>

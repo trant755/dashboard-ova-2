@@ -23,7 +23,7 @@ const SharedLayout = ({ children }) => {
           sx={{
             display: "flex",
             flexGrow: 1,
-            overflow: "overlay",
+            overflow: "scroll",
           }}
         >
           <Box
@@ -36,7 +36,7 @@ const SharedLayout = ({ children }) => {
               boxShadow: "inset 0 0 10px 0px rgba(0,0,0,0.3)",
               height: "max-content",
               minHeight: "100%",
-              padding: { lg: "20px" },
+              padding: { sm: "8px", lg: "20px" },
               // marginTop: "4px",
               marginRight: { lg: "20px" },
               borderRadius: { lg: "12px" },
@@ -45,9 +45,7 @@ const SharedLayout = ({ children }) => {
               overflow: "hidden",
             }}
           >
-            <Suspense>
-              <Outlet />
-            </Suspense>
+            <Outlet />
           </Box>
         </Box>
       </Box>
