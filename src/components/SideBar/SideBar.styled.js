@@ -61,7 +61,6 @@ export const Drawer = styled(MuiDrawer, {
   whiteSpace: "nowrap",
   boxSizing: "border-box",
   zIndex: "1200",
-  paddingTop: { sm: "86px", lg: "0px" },
 
   "  & .MuiDrawer-paper": {
     position: "relative",

@@ -21,6 +21,7 @@ export default function MiniDrawer({ open, setOpen }) {
       open={open}
       onMouseEnter={handleDrawerOpen}
       onMouseLeave={handleDrawerClose}
+      sx={{ paddingTop: { sm: "86px", lg: "0px" } }}
     >
       <NavList open={open} setOpen={setOpen} navRoutes={{ page, sub, group }} />
     </SC.Drawer>
