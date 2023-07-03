@@ -9,6 +9,7 @@ const containerSizes = {
   s: { w: 4, h: 2 },
   sl: { w: 6, h: 2 },
   m: { w: 4, h: 4 },
+  ml: { w: 6, h: 4 },
   lh: { w: 8, h: 4 },
   lv: { w: 4, h: 8 },
   xl: { w: 8, h: 8 },

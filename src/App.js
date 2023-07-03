@@ -2,7 +2,6 @@ import { Routes, Route, Navigate } from "react-router-dom";
 
 import SharedLayout from "./components/SharedLayout/SharedLayout";
 
-import { Box } from "@mui/system";
 import PageLayoute from "./components/MainLayout/PageLayout/PageLayoute";
 import NotFound from "./pages/NotFound";
 

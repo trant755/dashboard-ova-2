@@ -13,24 +13,33 @@ export const CurrentPageTitle = ({ open }) => {
     let prevPage = {};
     if (page) {
       prevPage = pages.find((elem) => elem.id === page);
-      title = prevPage.title;
-    }
-    if (sub) {
-      prevPage = prevPage.children.find((elem) => elem.id === sub);
-      title = prevPage.title;
-    }
-    if (group) {
-      prevPage = prevPage.children.find((elem) => elem.id === group);
-      title = prevPage.title;
-    }
-    if (!sub && !page && !group) {
-      const homePage = pages.find((elem) => elem.id === "home");
-      if (!homePage) {
+      if (!prevPage) {
         title = "404";
         navigate("/404");
         return;
+      } else {
+        title = prevPage.title;
       }
-      title = homePage.children[0].title;
+    }
+    if (sub) {
+      prevPage = prevPage.children.find((elem) => elem.id === sub);
+      if (!prevPage) {
+        title = "404";
+        navigate("/404");
+        return;
+      } else {
+        title = prevPage.title;
+      }
+    }
+    if (group) {
+      prevPage = prevPage.children.find((elem) => elem.id === group);
+      if (!prevPage) {
+        title = "404";
+        navigate("/404");
+        return;
+      } else {
+        title = prevPage.title;
+      }
     }
 
     setCurrentPage(title);

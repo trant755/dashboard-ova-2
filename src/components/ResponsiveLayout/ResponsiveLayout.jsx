@@ -20,10 +20,10 @@ const ResponsiveLayout = ({ layout, setLayout, children }) => {
     }
   }, []);
   // збереження зміни координат
-  const onLayoutChange = (newLayout) => {
-    setLayout(newLayout);
-    localStorage.setItem("layout", JSON.stringify(newLayout));
-  };
+  // const onLayoutChange = (newLayout) => {
+  //   setLayout(newLayout);
+  //   localStorage.setItem("layout", JSON.stringify(newLayout));
+  // };
 
   return (
     <Box ref={wrapper}>
@@ -51,15 +51,6 @@ const ResponsiveLayout = ({ layout, setLayout, children }) => {
         autoSize={true}
         // onLayoutChange={onLayoutChange}
         preventCollision={false}
-        onBreakpointChange={() => console.log("onBreakpointChange")}
-        // Calls when resize movement happens.
-
-        onWidthChange={(containerWidth) => {
-          console.log(containerWidth);
-          const grid = document.querySelector(".layout");
-
-          // grid.style.width = `${containerWidth - 11}px`;
-        }}
       >
         {children}
       </ResponsiveGridLayout>

@@ -1,10 +1,8 @@
 import React, { useEffect, useState } from "react";
-import { Box, Tab, Tabs, Typography } from "@mui/material";
+import { Box, Tab, Tabs } from "@mui/material";
 import pages from "../../../pagesConfig";
 
 import { useParams, useNavigate } from "react-router-dom";
-import { LayoutGrid } from "./LayoutGrid/LayoutGrid";
-import { IconFileDatabase } from "@tabler/icons";
 import { MessageBox } from "components/MessageBox";
 import { ChartGroupContainer } from "./ChartGroupContainer/ChartGroupContainer";
 
@@ -45,6 +43,10 @@ const PageLayoute = () => {
       if (sub) {
         data = data.children.find((elem) => elem.id === sub);
         if (!data) navigate("/404");
+      }
+      if (group) {
+        const res = data.children.find((elem) => elem.id === group);
+        if (!res) navigate("/404");
       }
 
       setCurrentPageConfig(data);
@@ -121,11 +123,11 @@ const PageLayoute = () => {
                   scrollButtons="auto"
                   aria-label="scrollable auto tabs example"
                 >
-                  {currentPageConfig.children.map((item) => (
+                  {currentPageConfig?.children?.map((item) => (
                     <Tab
-                      key={item.id}
-                      label={item.title}
-                      onClick={() => navigate(item.url)}
+                      key={item?.id}
+                      label={item?.title}
+                      onClick={() => navigate(item?.url)}
                     />
                   ))}
                 </Tabs>

@@ -11,9 +11,17 @@ export const ChartDonut = ({ chartConfig, filter }) => {
     }
     if (chartConfig?.data) {
       let newSeries = chartConfig.data;
-      filter.forEach((elem) => {
-        newSeries = newSeries[elem];
-      });
+
+      for (const elem of filter) {
+        if (newSeries) {
+          if (elem === "") {
+            newSeries = newSeries[Object.keys(newSeries)[0]];
+          } else {
+            newSeries = newSeries[elem];
+          }
+        }
+      }
+
       setCurrentSeries(newSeries);
     }
   }, [chartConfig, filter]);
@@ -30,15 +38,17 @@ export const ChartDonut = ({ chartConfig, filter }) => {
         padding: "12px",
       }}
     >
-      <Chart
-        style={{
-          backgroundColor: "transparent",
-        }}
-        options={chartConfig.options}
-        series={currentSeries}
-        type={chartConfig.type}
-        height={"100%"}
-      />
+      {Array.isArray(currentSeries) && (
+        <Chart
+          style={{
+            backgroundColor: "transparent",
+          }}
+          options={chartConfig.options}
+          series={currentSeries}
+          type={chartConfig.type}
+          height={"100%"}
+        />
+      )}
     </Box>
   );
 };

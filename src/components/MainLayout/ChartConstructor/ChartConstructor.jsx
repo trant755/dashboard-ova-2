@@ -36,9 +36,10 @@ export const ChartConstructor = ({ chart }) => {
             <Typography sx={{ color: "#fff" }}>{chart.title}</Typography>
           </Box>
         )}
-        {aditionalSetings && (
+        {aditionalSetings && chart.chartConfig.data && (
           <AditionalSetings
             setFilter={setFilter}
+            data={chart.chartConfig.data}
             aditionalSetings={aditionalSetings}
           />
         )}
