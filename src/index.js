@@ -9,7 +9,7 @@ import { theme } from "./theme";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <BrowserRouter>
+    <BrowserRouter basename="/dashboard-ova-2">
       <ThemeProvider theme={theme}>
         <App />
       </ThemeProvider>
