@@ -110,7 +110,7 @@ const PageLayoute = () => {
               boxShadow: "0 0 10px 0 rgba(0,0,0,0.3)",
               mr: { lg: "32px" },
               ml: { lg: "32px" },
-              top: { lg: "-20px" },
+              top: { sm: "-8px", lg: "-20px" },
               left: "0",
             }}
           >
