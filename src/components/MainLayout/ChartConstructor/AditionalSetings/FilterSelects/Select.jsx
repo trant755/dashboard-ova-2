@@ -20,8 +20,6 @@ export const Select = ({ selectConfig, data, filterValue, setFilterValue }) => {
     if (currentData) setValue(Object.keys(currentData)[0]);
   }, [currentData]);
 
-  console.log("value", value);
-
   useEffect(() => {
     setFilterValue((prevState) => {
       return {
