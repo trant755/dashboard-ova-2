@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/dashboard-ova-2/static/css/main.ff37373c.css",
-    "main.js": "/dashboard-ova-2/static/js/main.ceac4c02.js",
+    "main.js": "/dashboard-ova-2/static/js/main.e678320e.js",
     "index.html": "/dashboard-ova-2/index.html",
     "main.ff37373c.css.map": "/dashboard-ova-2/static/css/main.ff37373c.css.map",
-    "main.ceac4c02.js.map": "/dashboard-ova-2/static/js/main.ceac4c02.js.map"
+    "main.e678320e.js.map": "/dashboard-ova-2/static/js/main.e678320e.js.map"
   },
   "entrypoints": [
     "static/css/main.ff37373c.css",
-    "static/js/main.ceac4c02.js"
+    "static/js/main.e678320e.js"
   ]
 }
