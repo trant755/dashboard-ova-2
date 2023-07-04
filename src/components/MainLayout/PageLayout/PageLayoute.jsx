@@ -12,7 +12,7 @@ const PageLayoute = () => {
   const [chartsGroups, setChartsGroups] = useState([]);
   const [value, setValue] = useState(0);
   const navigate = useNavigate();
-
+  console.log("currentPageConfig", currentPageConfig);
   const { page, sub, group } = useParams();
   const handleChange = (event, newValue) => {
     setValue(newValue);

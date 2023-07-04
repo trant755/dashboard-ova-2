@@ -9,7 +9,6 @@ import { Divider } from "@mui/material";
 export const NavList = ({ open, setOpen, navRoutes }) => {
   const [currentNav, setCurrentNav] = useState("");
   const { page, sub, group } = navRoutes;
-
   return (
     <List
       sx={{

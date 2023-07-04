@@ -1,14 +1,22 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Box, Typography } from "@mui/material";
 import ChartsGenetrators from "./ChartsGenetrators";
 import * as SC from "./ChartConstructor.styled";
 import { AditionalSetings } from "./AditionalSetings/AditionalSetings";
 
-export const ChartConstructor = ({ chart }) => {
+export const ChartConstructor = ({ chart, groupFilter }) => {
   const [filter, setFilter] = useState([]);
+
+  useEffect(() => {
+    if (groupFilter) {
+      setFilter(groupFilter);
+    }
+  }, [groupFilter]);
+
   if (!chart) {
     return null;
   }
+
   const TypeChart = ChartsGenetrators[chart?.chartConfig.type];
   const { aditionalSetings = null } = chart?.chartConfig;
 

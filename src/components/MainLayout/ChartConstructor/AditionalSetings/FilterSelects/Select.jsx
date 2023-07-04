@@ -11,7 +11,7 @@ export const Select = ({ selectConfig, data, filterValue, setFilterValue }) => {
   const [value, setValue] = useState("");
   const [currentData, setCurrentData] = useState(data);
   const { id, title, position, subSelect } = selectConfig;
-
+  console.log(data);
   useEffect(() => {
     setCurrentData(data);
   }, [data]);

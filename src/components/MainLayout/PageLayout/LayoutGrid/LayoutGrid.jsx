@@ -18,7 +18,7 @@ const containerSizes = {
 
 // const layout = [{ i: "a", x: 0, y: 0, w: 1, h: 2 }];
 
-export const LayoutGrid = ({ charts: newCharts }) => {
+export const LayoutGrid = ({ charts: newCharts, groupFilter }) => {
   const [layout, setLayout] = useState([]);
   const [charts, setCharts] = useState([]);
 
@@ -52,7 +52,7 @@ export const LayoutGrid = ({ charts: newCharts }) => {
       {layout.map((elem, index) => (
         <Box key={elem.i}>
           {charts && charts.length > 0 && (
-            <ChartConstructor chart={charts[index]} />
+            <ChartConstructor groupFilter={groupFilter} chart={charts[index]} />
           )}
         </Box>
       ))}
