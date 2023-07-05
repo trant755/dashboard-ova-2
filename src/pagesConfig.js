@@ -1936,42 +1936,7 @@ const pages = [
       },
     ],
   },
-  {
-    id: "infrastructure",
-    title: "Інфраструктура",
-    menuTitle: "Інфраструктура",
-    type: "noCollapse",
-    icon: <Apartment />,
 
-    children: [
-      {
-        id: "all",
-        title: "Інфраструктура - загальна",
-        menuTitle: "Загальна",
-        type: "item",
-        url: "/infrastructure/all",
-        target: true,
-      },
-    ],
-  },
-  {
-    id: "healthcare",
-    title: "Охорона здоров'я",
-    menuTitle: "Охорона здоров'я",
-    type: "noCollapse",
-    icon: <MedicalServices />,
-
-    children: [
-      {
-        id: "all",
-        title: "Охорона здоров'я - загальна",
-        menuTitle: "Загальна",
-        type: "item",
-        url: "/healthcare/all",
-        target: true,
-      },
-    ],
-  },
   {
     id: "education",
     title: "Освіта",
@@ -2256,24 +2221,7 @@ const pages = [
       },
     ],
   },
-  {
-    id: "economy",
-    title: "Економіка",
-    menuTitle: "Економіка",
-    type: "noCollapse",
-    icon: <Assessment />,
 
-    children: [
-      {
-        id: "all",
-        title: "Економіка - загальна",
-        menuTitle: "Загальна",
-        type: "item",
-        url: "/economy/all",
-        target: true,
-      },
-    ],
-  },
   {
     id: "shelters",
     title: "Укриття",
@@ -2587,6 +2535,60 @@ const pages = [
             ],
           },
         ],
+      },
+    ],
+  },
+  {
+    id: "infrastructure",
+    title: "Інфраструктура",
+    menuTitle: "Інфраструктура",
+    type: "noCollapse",
+    icon: <Apartment />,
+
+    children: [
+      {
+        id: "all",
+        title: "Інфраструктура - загальна",
+        menuTitle: "Загальна",
+        type: "item",
+        url: "/infrastructure/all",
+        target: true,
+      },
+    ],
+  },
+  {
+    id: "healthcare",
+    title: "Охорона здоров'я",
+    menuTitle: "Охорона здоров'я",
+    type: "noCollapse",
+    icon: <MedicalServices />,
+
+    children: [
+      {
+        id: "all",
+        title: "Охорона здоров'я - загальна",
+        menuTitle: "Загальна",
+        type: "item",
+        url: "/healthcare/all",
+        target: true,
+      },
+    ],
+  },
+  {
+    id: "economy",
+    title: "Економіка",
+    menuTitle: "Економіка",
+    type: "noCollapse",
+    icon: <Assessment />,
+
+    children: [
+      {
+        id: "all",
+        title: "Економіка - загальна",
+        menuTitle: "Загальна",
+        type: "item",
+        url: "/economy/all",
+        target: true,
       },
     ],
   },

@@ -136,7 +136,7 @@ const PageLayoute = () => {
           </Box>
           {chartsGroups.length === 0 ? (
             <Box sx={{ mt: "20vh" }}>
-              <MessageBox text={"На цій сторінці графіки відсутні"} />
+              <MessageBox text={"Інформація опрацьовується"} />
             </Box>
           ) : (
             chartsGroups.map((item, index) => (
