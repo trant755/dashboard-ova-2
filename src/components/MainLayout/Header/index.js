@@ -1,4 +1,4 @@
-import * as React from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
@@ -13,19 +13,19 @@ import * as SC from "./Header.styled";
 
 import Fade from "@mui/material/Fade";
 import { CurrentPageTitle } from "./CurrentPageTitle/CurrentPageTitle";
+import { UserProfile } from "./UserProfile/UserProfile";
 
 export default function PrimarySearchAppBar({ open, setOpen }) {
-  // const [anchorEl, setAnchorEl] = React.useState(null);
-  // const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
+  const [anchorEl, setAnchorEl] = React.useState(null);
   const navigate = useNavigate();
 
-  // const handleProfileMenuOpen = (event) => {
-  //   setAnchorEl(event.currentTarget);
-  // };
+  const handleProfileMenuOpen = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
 
-  // const handleMobileMenuClose = () => {
-  //   setMobileMoreAnchorEl(null);
-  // };
+  const handleMobileMenuClose = () => {
+    setAnchorEl(null);
+  };
 
   // const handleMenuClose = () => {
   //   setAnchorEl(null);
@@ -95,12 +95,13 @@ export default function PrimarySearchAppBar({ open, setOpen }) {
           <Box sx={{ flexGrow: 1 }} />
           <Box sx={{ display: { xs: "none", md: "flex" } }}>
             <IconButton
+              aria-describedby={"user-profile-button"}
               size="large"
               edge="end"
               aria-label="account of current user"
               aria-controls={menuId}
               aria-haspopup="true"
-              // onClick={handleProfileMenuOpen}
+              onClick={handleProfileMenuOpen}
               color="inherit"
             >
               <AccountCircle />
@@ -118,6 +119,12 @@ export default function PrimarySearchAppBar({ open, setOpen }) {
               <MoreIcon />
             </IconButton>
           </Box>
+          <UserProfile
+            id={"user-profile-button"}
+            anchorEl={anchorEl}
+            openUserProfile={handleProfileMenuOpen}
+            closeUserProfile={handleMobileMenuClose}
+          />
         </Toolbar>
       </AppBar>
     </Box>
