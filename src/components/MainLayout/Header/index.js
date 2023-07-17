@@ -16,7 +16,7 @@ import { CurrentPageTitle } from "./CurrentPageTitle/CurrentPageTitle";
 import { UserProfile } from "./UserProfile/UserProfile";
 
 export default function PrimarySearchAppBar({ open, setOpen }) {
-  const [anchorEl, setAnchorEl] = React.useState(null);
+  const [anchorEl, setAnchorEl] = useState(null);
   const navigate = useNavigate();
 
   const handleProfileMenuOpen = (event) => {
