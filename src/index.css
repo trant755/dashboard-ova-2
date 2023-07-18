@@ -11,6 +11,39 @@ body {
   line-height: 1.5;
 }
 
+@font-face {
+  font-family: "e-Ukraine";
+  src: url("./fonts/e-Ukraine/e-Ukraine-Thin.otf") format("opentype");
+  font-weight: 100; /* Легкий (Light) шрифт */
+}
+@font-face {
+  font-family: "e-Ukraine";
+  src: url("./fonts/e-Ukraine/e-Ukraine-UltraLight.otf") format("opentype");
+  font-weight: 200; /* Легкий (Light) шрифт */
+}
+@font-face {
+  font-family: "e-Ukraine";
+  src: url("./fonts/e-Ukraine/e-Ukraine-Light.otf") format("opentype");
+  font-weight: 300; /* Легкий (Light) шрифт */
+}
+
+@font-face {
+  font-family: "e-Ukraine";
+  src: url("./fonts/e-Ukraine/e-Ukraine-Regular.otf") format("opentype");
+  font-weight: 400; /* Обычный (Regular) шрифт */
+}
+@font-face {
+  font-family: "e-Ukraine";
+  src: url("./fonts/e-Ukraine/e-Ukraine-Medium.otf") format("opentype");
+  font-weight: 500; /* Обычный (Regular) шрифт */
+}
+
+@font-face {
+  font-family: "e-Ukraine";
+  src: url("./fonts/e-Ukraine/e-Ukraine-Bold.otf") format("opentype");
+  font-weight: 700; /* Полужирный (Bold) шрифт */
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;

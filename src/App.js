@@ -4,10 +4,12 @@ import SharedLayout from "./components/SharedLayout/SharedLayout";
 
 import PageLayoute from "./components/MainLayout/PageLayout/PageLayoute";
 import NotFound from "./pages/NotFound";
+import Auth from "pages/Auth";
 
 function App() {
   return (
     <Routes>
+      <Route path="/login" element={<Auth />} />
       <Route path="/" element={<SharedLayout />}>
         <Route index element={<Navigate to={"/home/all"} />} />
         <Route path="/:page" element={<PageLayoute />}>
