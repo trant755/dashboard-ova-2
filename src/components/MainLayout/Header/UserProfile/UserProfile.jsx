@@ -1,5 +1,8 @@
 import React from "react";
-import { Popover, Typography, Box } from "@mui/material";
+import { Popover, Box } from "@mui/material";
+import { useSelector } from "react-redux";
+import * as SC from "./UserProfile.styled";
+import { selectUser } from "redux/auth/authSlice";
 
 export const UserProfile = ({
   openUserProfile,
@@ -8,24 +11,49 @@ export const UserProfile = ({
   anchorEl,
 }) => {
   const open = Boolean(anchorEl);
+  const user = useSelector(selectUser);
+  console.log("user", user);
+  if (user)
+    return (
+      <Popover
+        id={id}
+        open={open}
+        anchorEl={anchorEl}
+        onClose={closeUserProfile}
+        anchorOrigin={{
+          vertical: "bottom",
+          horizontal: "left",
+        }}
+      >
+        <SC.ProfileWrapper>
+          <SC.UserName>
+            {`${user.lastName} ${user.firstName} ${
+              user.surname && user.surname
+            }`}
+          </SC.UserName>
+          <SC.UserPosition>{user.position}</SC.UserPosition>
+          <Box component={"ul"}>
+            <SC.UserInfoWrapper>
+              <SC.InfoLabel>Телефон:</SC.InfoLabel>
+              <SC.InfoText>{user.phone}</SC.InfoText>
+            </SC.UserInfoWrapper>
 
-  return (
-    <Popover
-      id={id}
-      open={open}
-      anchorEl={anchorEl}
-      onClose={closeUserProfile}
-      anchorOrigin={{
-        vertical: "bottom",
-        horizontal: "left",
-      }}
-    >
-      <Box sx={{ width: "320px", p: 2 }}>
-        <Typography sx={{ fontSize: "20px", fontWeight: "600" }}>
-          Василь Петрович Мацко
-        </Typography>
-        <Typography>Шеф</Typography>
-      </Box>
-    </Popover>
-  );
+            <SC.UserInfoWrapper>
+              <SC.InfoLabel>Електронна пошта:</SC.InfoLabel>
+              <SC.InfoText>{user.email}</SC.InfoText>
+            </SC.UserInfoWrapper>
+
+            <SC.UserInfoWrapper>
+              <SC.InfoLabel>Район:</SC.InfoLabel>
+              <SC.InfoText>{user.district}</SC.InfoText>
+            </SC.UserInfoWrapper>
+            <SC.UserInfoWrapper>
+              <SC.InfoLabel>Район:</SC.InfoLabel>
+              <SC.InfoText>{user.hromada}</SC.InfoText>
+            </SC.UserInfoWrapper>
+          </Box>
+          <SC.LogoutButton>Вихід</SC.LogoutButton>
+        </SC.ProfileWrapper>
+      </Popover>
+    );
 };

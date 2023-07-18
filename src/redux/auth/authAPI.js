@@ -1,8 +1,16 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
-export const authSlice = createApi({
+export const authApi = createApi({
+  reducerPath: "authApi",
   baseQuery: fetchBaseQuery({
     baseUrl: "http://192.168.2.247:4004/api/auth",
+    prepareHeaders: (headers, { getState }) => {
+      const token = getState().auth.token;
+      if (token) {
+        headers.set("authorization", `Bearer ${token}`);
+      }
+      return headers;
+    },
   }),
   endpoints: (builder) => ({
     login: builder.mutation({
@@ -12,14 +20,13 @@ export const authSlice = createApi({
         body: credentials,
       }),
     }),
-
-    getsm: builder.mutation({
+    logout: builder.mutation({
       query: () => ({
-        url: "/getAllUsers",
-        method: "GET",
+        url: "/logout",
+        method: "POST",
       }),
     }),
   }),
 });
 
-export const { useLoginMutation, useGetsmMutation } = authSlice;
+export const { useLoginMutation, useLogoutMutation } = authApi;

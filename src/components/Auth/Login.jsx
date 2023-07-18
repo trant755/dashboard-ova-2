@@ -1,17 +1,21 @@
 import * as SC from "./Login.styled";
 import { useFormik } from "formik";
 import { useLoginMutation } from "redux/auth/authAPI";
+import { useNavigate } from "react-router-dom";
 
 export const Login = () => {
   const [login] = useLoginMutation();
+  const navigate = useNavigate();
 
   const formik = useFormik({
     initialValues: {
-      email: "",
+      login: "",
       password: "",
     },
-    onSubmit: (values) => {
-      login(values);
+    onSubmit: async (values) => {
+      await login(values).then((res) => {
+        if (res.data.status === "success") navigate("/home/all");
+      });
     },
   });
 
@@ -20,12 +24,12 @@ export const Login = () => {
       <SC.AuthTitle>Вхід</SC.AuthTitle>
       <SC.LoginForm onSubmit={formik.handleSubmit}>
         <SC.LoginInput
-          id="email"
-          name="email"
+          id="login"
+          name="login"
           type="text"
           placeholder="Логін"
           onChange={formik.handleChange}
-          value={formik.values.email}
+          value={formik.values.login}
         />
         <SC.LoginInput
           id="password"
