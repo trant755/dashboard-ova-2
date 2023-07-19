@@ -3,7 +3,7 @@ import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 export const authApi = createApi({
   reducerPath: "authApi",
   baseQuery: fetchBaseQuery({
-    baseUrl: "http://192.168.2.247:4004/api/auth",
+    baseUrl: "https://testserver.digital-zakarpattia.com.ua/api/auth",
     prepareHeaders: (headers, { getState }) => {
       const token = getState().auth.token;
       if (token) {
@@ -23,7 +23,7 @@ export const authApi = createApi({
     logout: builder.mutation({
       query: () => ({
         url: "/logout",
-        method: "POST",
+        method: "GET",
       }),
     }),
     currentUser: builder.query({

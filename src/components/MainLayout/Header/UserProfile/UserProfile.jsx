@@ -3,6 +3,9 @@ import { Popover, Box } from "@mui/material";
 import { useSelector } from "react-redux";
 import * as SC from "./UserProfile.styled";
 import { selectUser } from "redux/auth/authSlice";
+import { useNavigate } from "react-router-dom";
+import { useLogoutMutation } from "redux/auth/authAPI";
+import { LoaderSmall } from "components/Loader";
 
 export const UserProfile = ({
   openUserProfile,
@@ -12,7 +15,18 @@ export const UserProfile = ({
 }) => {
   const open = Boolean(anchorEl);
   const user = useSelector(selectUser);
-  console.log("user", user);
+  const navigate = useNavigate();
+  const [logout, { isLoading }] = useLogoutMutation();
+
+  const logoutHandler = async () => {
+    try {
+      await logout();
+      navigate("/login");
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   if (user)
     return (
       <Popover
@@ -75,7 +89,13 @@ export const UserProfile = ({
               </SC.InfoText>
             </SC.UserInfoWrapper>
           </Box>
-          <SC.LogoutButton>Вихід</SC.LogoutButton>
+          <SC.LogoutButton
+            disabled={isLoading}
+            type="button"
+            onClick={logoutHandler}
+          >
+            {isLoading ? <LoaderSmall size={28} thickness={5} /> : "Вихід"}
+          </SC.LogoutButton>
         </SC.ProfileWrapper>
       </Popover>
     );

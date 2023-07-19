@@ -1,19 +1,12 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import AppBar from "@mui/material/AppBar";
-import Box from "@mui/material/Box";
-import Toolbar from "@mui/material/Toolbar";
-import IconButton from "@mui/material/IconButton";
-import Typography from "@mui/material/Typography";
-
-import AccountCircle from "@mui/icons-material/AccountCircle";
-import MoreIcon from "@mui/icons-material/MoreVert";
+import { AppBar, Box, Toolbar, Typography, Fade } from "@mui/material";
 
 import * as SC from "./Header.styled";
 
-import Fade from "@mui/material/Fade";
 import { CurrentPageTitle } from "./CurrentPageTitle/CurrentPageTitle";
-import { UserProfile } from "./UserProfile/UserProfile";
+
+import { ProfileNav } from "./ProfileNav/ProfileNav";
 
 export default function PrimarySearchAppBar({ open, setOpen }) {
   const [anchorEl, setAnchorEl] = useState(null);
@@ -26,15 +19,6 @@ export default function PrimarySearchAppBar({ open, setOpen }) {
   const handleMobileMenuClose = () => {
     setAnchorEl(null);
   };
-
-  // const handleMenuClose = () => {
-  //   setAnchorEl(null);
-  //   handleMobileMenuClose();
-  // };
-
-  // const handleMobileMenuOpen = (event) => {
-  //   setMobileMoreAnchorEl(event.currentTarget);
-  // };
 
   const menuId = "primary-search-account-menu";
 
@@ -93,37 +77,12 @@ export default function PrimarySearchAppBar({ open, setOpen }) {
           <Box sx={{ flexGrow: 1 }} />
           <CurrentPageTitle open={open} />
           <Box sx={{ flexGrow: 1 }} />
-          <Box sx={{ display: { xs: "none", md: "flex" } }}>
-            <IconButton
-              aria-describedby={"user-profile-button"}
-              size="large"
-              edge="end"
-              aria-label="account of current user"
-              aria-controls={menuId}
-              aria-haspopup="true"
-              onClick={handleProfileMenuOpen}
-              color="inherit"
-            >
-              <AccountCircle />
-            </IconButton>
-          </Box>
-          <Box sx={{ display: { xs: "flex", md: "none" } }}>
-            <IconButton
-              size="large"
-              aria-label="show more"
-              aria-controls={mobileMenuId}
-              aria-haspopup="true"
-              // onClick={handleMobileMenuOpen}
-              color="inherit"
-            >
-              <MoreIcon />
-            </IconButton>
-          </Box>
-          <UserProfile
-            id={"user-profile-button"}
+          <ProfileNav
+            menuId={menuId}
+            handleProfileMenuOpen={handleProfileMenuOpen}
+            mobileMenuId={mobileMenuId}
             anchorEl={anchorEl}
-            openUserProfile={handleProfileMenuOpen}
-            closeUserProfile={handleMobileMenuClose}
+            handleMobileMenuClose={handleMobileMenuClose}
           />
         </Toolbar>
       </AppBar>

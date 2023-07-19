@@ -2,9 +2,10 @@ import * as SC from "./Login.styled";
 import { useFormik } from "formik";
 import { useLoginMutation } from "redux/auth/authAPI";
 import { useNavigate } from "react-router-dom";
+import { LoaderBig } from "components/Loader";
 
 export const Login = () => {
-  const [login] = useLoginMutation();
+  const [login, { isLoading }] = useLoginMutation();
   const navigate = useNavigate();
 
   const formik = useFormik({
@@ -13,9 +14,12 @@ export const Login = () => {
       password: "",
     },
     onSubmit: async (values) => {
-      await login(values).then((res) => {
-        if (res.data.status === "success") navigate("/home/all");
-      });
+      try {
+        await login(values);
+        navigate("/home/all");
+      } catch (error) {
+        console.log(error);
+      }
     },
   });
 
@@ -41,6 +45,7 @@ export const Login = () => {
         />
         <SC.LoginButton type="submit">Увійти</SC.LoginButton>
       </SC.LoginForm>
+      {isLoading && <LoaderBig />}
     </SC.LoginWrapper>
   );
 };
