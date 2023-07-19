@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/dashboard-ova-2/static/css/main.377e87da.css",
-    "main.js": "/dashboard-ova-2/static/js/main.5c3d4ef2.js",
+    "main.css": "/dashboard-ova-2/static/css/main.a39d1fe4.css",
+    "main.js": "/dashboard-ova-2/static/js/main.e843593e.js",
     "static/media/e-Ukraine-Medium.otf": "/dashboard-ova-2/static/media/e-Ukraine-Medium.768e3644ab7db178be11.otf",
     "static/media/e-Ukraine-Regular.otf": "/dashboard-ova-2/static/media/e-Ukraine-Regular.38805a5a6a103eb1aa7d.otf",
     "static/media/e-Ukraine-UltraLight.otf": "/dashboard-ova-2/static/media/e-Ukraine-UltraLight.0db29a0c254eda5ab03e.otf",
@@ -9,11 +9,11 @@
     "static/media/e-Ukraine-Light.otf": "/dashboard-ova-2/static/media/e-Ukraine-Light.051230eeb9d14f5e4305.otf",
     "static/media/e-Ukraine-Bold.otf": "/dashboard-ova-2/static/media/e-Ukraine-Bold.b0b74cb733e17bc41a86.otf",
     "index.html": "/dashboard-ova-2/index.html",
-    "main.377e87da.css.map": "/dashboard-ova-2/static/css/main.377e87da.css.map",
-    "main.5c3d4ef2.js.map": "/dashboard-ova-2/static/js/main.5c3d4ef2.js.map"
+    "main.a39d1fe4.css.map": "/dashboard-ova-2/static/css/main.a39d1fe4.css.map",
+    "main.e843593e.js.map": "/dashboard-ova-2/static/js/main.e843593e.js.map"
   },
   "entrypoints": [
-    "static/css/main.377e87da.css",
-    "static/js/main.5c3d4ef2.js"
+    "static/css/main.a39d1fe4.css",
+    "static/js/main.e843593e.js"
   ]
 }
