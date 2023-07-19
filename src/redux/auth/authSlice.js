@@ -26,6 +26,26 @@ export const authSlice = createSlice({
         state.user = action.payload.data.user;
       }
     );
+    builder.addMatcher(
+      authApi.endpoints.currentUser.matchFulfilled,
+      (state, action) => {
+        state.user = action.payload.data.user;
+      }
+    );
+    builder.addMatcher(
+      authApi.endpoints.currentUser.matchRejected,
+      (state, action) => {
+        state.user = null;
+        state.token = null;
+      }
+    );
+    builder.addMatcher(
+      authApi.endpoints.logout.matchFulfilled,
+      (state, action) => {
+        state.token = null;
+        state.user = null;
+      }
+    );
   },
 });
 

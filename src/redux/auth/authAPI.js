@@ -26,7 +26,11 @@ export const authApi = createApi({
         method: "POST",
       }),
     }),
+    currentUser: builder.query({
+      query: () => "/current-user",
+    }),
   }),
 });
 
-export const { useLoginMutation, useLogoutMutation } = authApi;
+export const { useLoginMutation, useLogoutMutation, useCurrentUserQuery } =
+  authApi;

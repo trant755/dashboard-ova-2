@@ -20,36 +20,59 @@ export const UserProfile = ({
         open={open}
         anchorEl={anchorEl}
         onClose={closeUserProfile}
+        sx={{
+          "& .MuiPopover-paper": {
+            backgroundColor: "transparent",
+            boxShadow: "none",
+          },
+        }}
         anchorOrigin={{
           vertical: "bottom",
           horizontal: "left",
         }}
       >
         <SC.ProfileWrapper>
-          <SC.UserName>
-            {`${user.lastName} ${user.firstName} ${
-              user.surname && user.surname
-            }`}
-          </SC.UserName>
-          <SC.UserPosition>{user.position}</SC.UserPosition>
-          <Box component={"ul"}>
+          <Box
+            sx={{
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "flex-start",
+              gap: "8px",
+            }}
+          >
+            <SC.UserName>
+              {`${user.lastName} ${user.firstName} ${
+                user.surname && user.surname
+              }`}
+            </SC.UserName>
+            <SC.UserPosition>{user.position}</SC.UserPosition>
+          </Box>
+          <Box component={"ul"} sx={{ width: "100%" }}>
             <SC.UserInfoWrapper>
               <SC.InfoLabel>Телефон:</SC.InfoLabel>
-              <SC.InfoText>{user.phone}</SC.InfoText>
+              <SC.InfoText>
+                {user.phone ? user.phone : "Інформація відсутня"}
+              </SC.InfoText>
             </SC.UserInfoWrapper>
 
             <SC.UserInfoWrapper>
-              <SC.InfoLabel>Електронна пошта:</SC.InfoLabel>
-              <SC.InfoText>{user.email}</SC.InfoText>
+              <SC.InfoLabel>Пошта:</SC.InfoLabel>
+              <SC.InfoText>
+                {user.email ? user.email : "Інформація відсутня"}
+              </SC.InfoText>
             </SC.UserInfoWrapper>
 
             <SC.UserInfoWrapper>
               <SC.InfoLabel>Район:</SC.InfoLabel>
-              <SC.InfoText>{user.district}</SC.InfoText>
+              <SC.InfoText>
+                {user.district ? user.district : "Інформація відсутня"}
+              </SC.InfoText>
             </SC.UserInfoWrapper>
             <SC.UserInfoWrapper>
               <SC.InfoLabel>Район:</SC.InfoLabel>
-              <SC.InfoText>{user.hromada}</SC.InfoText>
+              <SC.InfoText>
+                {user.hromada ? user.hromada : "Інформація відсутня"}
+              </SC.InfoText>
             </SC.UserInfoWrapper>
           </Box>
           <SC.LogoutButton>Вихід</SC.LogoutButton>

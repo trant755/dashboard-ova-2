@@ -5,8 +5,14 @@ import SharedLayout from "./components/SharedLayout/SharedLayout";
 import PageLayoute from "./components/MainLayout/PageLayout/PageLayoute";
 import NotFound from "./pages/NotFound";
 import Auth from "pages/Auth";
+import { useSelector } from "react-redux";
+import { useCurrentUserQuery } from "redux/auth/authAPI";
+import { selectToken } from "redux/auth/authSlice";
 
 function App() {
+  const token = useSelector(selectToken);
+  useCurrentUserQuery(null, { skip: !token });
+
   return (
     <Routes>
       <Route path="/login" element={<Auth />} />
