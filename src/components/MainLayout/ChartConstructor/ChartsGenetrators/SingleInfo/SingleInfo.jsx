@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
-
-import { Box, Typography } from "@mui/material";
+import * as SC from "./SingleInfo.styled";
 
 export const SingleInfo = ({ chartConfig, filter }) => {
   const [currentSeries, setCurrentSeries] = useState([]);
@@ -30,26 +29,17 @@ export const SingleInfo = ({ chartConfig, filter }) => {
     return <div>no data</div>;
   }
   return (
-    <Box
-      sx={{
-        height: "100%",
-        display: "flex",
-        flexDirection: "column",
-        justifyContent: "space-evenly",
-        alignItems: "center",
-        color: "white",
-      }}
-    >
-      <Typography sx={{ fontSize: "24px", textAlign: "center" }}>
+    <SC.BoxSingleInfoStyled>
+      <SC.TypographyTitleStyled>
         {chartConfig.options.text}
-      </Typography>
+      </SC.TypographyTitleStyled>
       {typeof currentSeries === "string" ||
         (typeof currentSeries === "number" && (
-          <Typography sx={{ fontSize: "26px", textAlign: "center" }}>
+          <SC.TypographySubTitleStyled>
             {currentSeries}
             {chartConfig.options.addText && ` ${chartConfig.options.addText}`}
-          </Typography>
+          </SC.TypographySubTitleStyled>
         ))}
-    </Box>
+    </SC.BoxSingleInfoStyled>
   );
 };

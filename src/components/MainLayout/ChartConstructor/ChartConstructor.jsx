@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import { Box, Typography } from "@mui/material";
 import ChartsGenetrators from "./ChartsGenetrators";
 import * as SC from "./ChartConstructor.styled";
 import { AditionalSetings } from "./AditionalSetings/AditionalSetings";
@@ -22,27 +21,11 @@ export const ChartConstructor = ({ chart, groupFilter }) => {
 
   return (
     <SC.CahrtConstructorWrapper>
-      <Box
-        sx={{
-          height: "100%",
-          width: "100%",
-          display: "flex",
-          flexDirection: "column",
-          position: "relative",
-          zIndex: "5",
-        }}
-      >
+      <SC.BoxChartContainer>
         {chart.title && (
-          <Box
-            sx={{
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              p: "8px",
-            }}
-          >
-            <Typography sx={{ color: "#fff" }}>{chart.title}</Typography>
-          </Box>
+          <SC.BoxTitle>
+            <SC.TypographyStyled>{chart.title}</SC.TypographyStyled>
+          </SC.BoxTitle>
         )}
         {aditionalSetings && chart.chartConfig.data && (
           <AditionalSetings
@@ -52,7 +35,7 @@ export const ChartConstructor = ({ chart, groupFilter }) => {
           />
         )}
         <TypeChart filter={filter} chartConfig={chart.chartConfig} />
-      </Box>
+      </SC.BoxChartContainer>
     </SC.CahrtConstructorWrapper>
   );
 };
