@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
-import Chart from "react-apexcharts";
-import { Box } from "@mui/material";
+import * as SC from "./ChartDonut.styled";
 
 export const ChartDonut = ({ chartConfig, filter }) => {
   const [currentSeries, setCurrentSeries] = useState([]);
@@ -30,25 +29,15 @@ export const ChartDonut = ({ chartConfig, filter }) => {
     return <div>no data</div>;
   }
   return (
-    <Box
-      sx={{
-        height: "100%",
-        backgroundColor: "rgb(237, 231, 246, 0.3)",
-        borderRadius: "12px",
-        padding: "12px",
-      }}
-    >
+    <SC.BoxDonutStyled>
       {Array.isArray(currentSeries) && (
-        <Chart
-          style={{
-            backgroundColor: "transparent",
-          }}
+        <SC.DonutBarStyled
           options={chartConfig.options}
           series={currentSeries}
           type={chartConfig.type}
           height={"100%"}
         />
       )}
-    </Box>
+    </SC.BoxDonutStyled>
   );
 };

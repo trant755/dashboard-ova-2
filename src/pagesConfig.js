@@ -253,7 +253,7 @@ const pages = [
                         },
                         legend: {
                           labels: {
-                            colors: "#fff",
+                            colors: "#000т",
                           },
                           position: "top",
                         },

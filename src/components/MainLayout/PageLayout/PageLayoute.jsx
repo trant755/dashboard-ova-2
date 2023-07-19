@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Box, Tab, Tabs } from "@mui/material";
 import pages from "../../../pagesConfig";
+import * as SC from "./PageLayoute.styled";
 
 import { useParams, useNavigate } from "react-router-dom";
 import { MessageBox } from "components/MessageBox";
@@ -95,25 +96,10 @@ const PageLayoute = () => {
   }, [currentPage, currentPageConfig, group, navigate]);
 
   return (
-    <Box sx={{ width: "100%", position: "relative" }}>
+    <SC.PageLayoutContainerStyled>
       {currentPageConfig && (
         <>
-          <Box
-            sx={{
-              display: "flex",
-              flexDirection: "column",
-              alignItems: "center",
-              justifyContent: "center",
-              backgroundColor: "#fff",
-              borderRadius: "0 0 12px 12px",
-              position: "relative",
-              boxShadow: "0 0 10px 0 rgba(0,0,0,0.3)",
-              mr: { lg: "32px" },
-              ml: { lg: "32px" },
-              top: { sm: "-8px", lg: "-20px" },
-              left: "0",
-            }}
-          >
+          <SC.PageLayoutTabsContainerStyled>
             {currentPageConfig.children && (
               <Box sx={{ maxWidth: "100%" }}>
                 <Tabs
@@ -133,7 +119,7 @@ const PageLayoute = () => {
                 </Tabs>
               </Box>
             )}
-          </Box>
+          </SC.PageLayoutTabsContainerStyled>
           {chartsGroups.length === 0 ? (
             <Box sx={{ mt: "20vh" }}>
               <MessageBox text={"Інформація опрацьовується"} />
@@ -148,7 +134,7 @@ const PageLayoute = () => {
               height: "100%",
               width: "1px",
               boxShadow: "0 0 10px 0 rgba(0,0,0,0.3)",
-              backgroundColor: "#eef2f6",
+              // backgroundColor: "#1e67b0",
               position: "absolute",
               right: "-20px",
               top: "-20px",
@@ -156,7 +142,7 @@ const PageLayoute = () => {
           />
         </>
       )}
-    </Box>
+    </SC.PageLayoutContainerStyled>
   );
 };
 

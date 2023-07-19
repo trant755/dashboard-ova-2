@@ -44,8 +44,8 @@ export const Select = ({ selectConfig, data, filterValue, setFilterValue }) => {
                   size="small"
                   sx={{
                     width: 120,
-                    color: "white",
-                    borderColor: "white",
+                    color: "#000",
+                    borderColor: "#000",
                     "&:hover": {
                       "&& fieldset": {
                         color: "inherit",
@@ -53,7 +53,7 @@ export const Select = ({ selectConfig, data, filterValue, setFilterValue }) => {
                       },
                     },
                     "& label.Mui-focused": {
-                      color: "white",
+                      color: "#000",
                     },
                     "& svg": {
                       color: "inherit",
@@ -66,7 +66,7 @@ export const Select = ({ selectConfig, data, filterValue, setFilterValue }) => {
                   <InputLabel
                     sx={{
                       color: "inherit",
-                      borderColor: "white",
+                      borderColor: "#000",
                     }}
                     id={`${id}-label`}
                   >
@@ -78,8 +78,8 @@ export const Select = ({ selectConfig, data, filterValue, setFilterValue }) => {
                     value={value}
                     label={title}
                     sx={{
-                      color: "white",
-                      borderColor: "white",
+                      color: "#000",
+                      borderColor: "#000",
                       "&& .MuiOutlinedInput-notchedOutline": {
                         borderWidth: "2px !important",
                         borderColor: "inherit !important",

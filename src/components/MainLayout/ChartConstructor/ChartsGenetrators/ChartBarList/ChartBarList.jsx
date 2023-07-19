@@ -43,6 +43,7 @@ export const ChartBarList = ({ chartConfig, filter }) => {
   return (
     <Box
       sx={{
+        backgroundColor: "rgb(237, 231, 246, 0.3)",
         height: "100%",
         overflow: "hidden",
         borderRadius: "12px",

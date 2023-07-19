@@ -210,6 +210,8 @@ select {
   transform: rotate(45deg);
 }
 
-.apexcharts-text {
-  fill: white;
+.apexcharts-text,
+.apexcharts-datalabel {
+  fill: #000;
+  color: #000;
 }
