@@ -357,11 +357,13 @@ const pages = [
                             id: nanoid(),
                             position: "1",
                             title: "Райони",
+                            target: "district",
 
                             subSelect: {
                               id: nanoid(),
                               position: "2",
                               title: "Громади",
+                              target: "hromada",
                             },
                           },
                         ],
@@ -487,11 +489,13 @@ const pages = [
                             id: nanoid(),
                             position: "1",
                             title: "Райони",
+                            target: "district",
 
                             subSelect: {
                               id: nanoid(),
                               position: "2",
                               title: "Громади",
+                              target: "hromada",
                             },
                           },
                         ],
@@ -867,16 +871,19 @@ const pages = [
                             id: nanoid(),
                             position: "1",
                             title: "Райони",
+                            target: "district",
 
                             subSelect: {
                               id: nanoid(),
                               position: "2",
                               title: "Громада",
+                              target: "hromada",
 
                               subSelect: {
                                 id: nanoid(),
                                 position: "3",
                                 title: "Тип",
+                                target: "type",
                               },
                             },
                           },
@@ -1150,16 +1157,19 @@ const pages = [
                             id: nanoid(),
                             position: "1",
                             title: "Райони",
+                            target: "district",
 
                             subSelect: {
                               id: nanoid(),
                               position: "2",
                               title: "Громада",
+                              target: "hromada",
 
                               subSelect: {
                                 id: nanoid(),
                                 position: "3",
                                 title: "Тип",
+                                target: "type",
                               },
                             },
                           },
@@ -1433,16 +1443,19 @@ const pages = [
                             id: nanoid(),
                             position: "1",
                             title: "Райони",
+                            target: "district",
 
                             subSelect: {
                               id: nanoid(),
                               position: "2",
                               title: "Громада",
+                              target: "hromada",
 
                               subSelect: {
                                 id: nanoid(),
                                 position: "3",
                                 title: "Тип",
+                                target: "type",
                               },
                             },
                           },
@@ -1470,11 +1483,13 @@ const pages = [
                     id: nanoid(),
                     position: "1",
                     title: "Райони",
+                    target: "district",
 
                     subSelect: {
                       id: nanoid(),
                       position: "2",
                       title: "Громади",
+                      target: "hromada",
                     },
                   },
                 ],
@@ -2637,11 +2652,13 @@ const pages = [
                         id: nanoid(),
                         position: "1",
                         title: "Райони",
+                        target: "district",
 
                         subSelect: {
                           id: nanoid(),
                           position: "2",
                           title: "Громади",
+                          target: "hromada",
                         },
                       },
                     ],
@@ -2767,11 +2784,13 @@ const pages = [
                         id: nanoid(),
                         position: "1",
                         title: "Райони",
+                        target: "district",
 
                         subSelect: {
                           id: nanoid(),
                           position: "2",
                           title: "Громади",
+                          target: "hromada",
                         },
                       },
                     ],
@@ -2942,11 +2961,13 @@ const pages = [
                         id: nanoid(),
                         position: "1",
                         title: "Райони",
+                        target: "district",
 
                         subSelect: {
                           id: nanoid(),
                           position: "2",
                           title: "Громади",
+                          target: "hromada",
                         },
                       },
                     ],

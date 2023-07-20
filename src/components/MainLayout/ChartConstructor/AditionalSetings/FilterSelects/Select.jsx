@@ -11,18 +11,41 @@ export const Select = ({
   selectConfig,
   data,
   filterValue,
-  userFilter,
+  user,
   setFilterValue,
+  userFilterPosition,
 }) => {
   const [value, setValue] = useState("");
   const [currentData, setCurrentData] = useState(data);
   const { id, title, position, subSelect } = selectConfig;
-  console.log("selectConfig", selectConfig);
-  console.log("currentData", currentData);
-  useEffect(() => {
-    setCurrentData(data);
-  }, [data]);
 
+  useEffect(() => {
+    if (data) {
+      const userFilter = user?.access;
+      if (userFilter && userFilter === selectConfig.target) {
+        setCurrentData({ [user[userFilter]]: data[user[userFilter]] });
+      } else if (
+        userFilter &&
+        userFilter !== selectConfig.target &&
+        !(selectConfig.position > userFilterPosition)
+      ) {
+        setCurrentData({
+          [user[selectConfig.target]]: data[user[selectConfig.target]],
+        });
+        console.log("user[selectConfig.target]", user[selectConfig.target]);
+        setValue(user[selectConfig.target]);
+      } else {
+        setCurrentData(data);
+      }
+    }
+  }, [
+    data,
+    selectConfig.position,
+    selectConfig.target,
+    user,
+    userFilterPosition,
+  ]);
+  console.log("currentData", value);
   useEffect(() => {
     if (currentData) setValue(Object.keys(currentData)[0]);
   }, [currentData]);
@@ -111,6 +134,8 @@ export const Select = ({
             data={currentData[value]}
             filterValue={filterValue}
             setFilterValue={setFilterValue}
+            user={user}
+            userFilterPosition={userFilterPosition}
           />
         )}
       </>

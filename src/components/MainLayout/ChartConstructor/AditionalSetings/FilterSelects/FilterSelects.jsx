@@ -1,15 +1,33 @@
 import React, { useEffect, useState } from "react";
 import { Select } from "./Select";
 import * as SC from "./FilterSelects.styled";
+import { useSelector } from "react-redux";
+import { selectUser } from "redux/auth/authSlice";
 
 export const FilterSelects = ({
   filterSelects,
   data,
   setFilter,
-  userFilter,
   setGroupFilter,
 }) => {
   const [filterValue, setFilterValue] = useState({});
+  const [userFilterPosition, setUserFilterPosition] = useState(0);
+  const user = useSelector(selectUser);
+
+  useEffect(() => {
+    if (user && user.access && filterSelects) {
+      let position = 0;
+      let currentObj = filterSelects[0];
+
+      while (currentObj.target !== user.access) {
+        currentObj = currentObj.subSelect;
+
+        position = currentObj.position;
+      }
+      setUserFilterPosition(position);
+    }
+    console.log("userFilterPosition", userFilterPosition);
+  }, [filterSelects, user, userFilterPosition]);
 
   useEffect(() => {
     if (Object.keys(filterValue).length > 0) {
@@ -29,8 +47,10 @@ export const FilterSelects = ({
           selectConfig={option}
           filterValue={filterValue}
           setFilterValue={setFilterValue}
+          userFilterPosition={userFilterPosition}
+          setUserFilterPosition={setUserFilterPosition}
           data={data}
-          userFilter={userFilter}
+          user={user}
         />
       ))}
     </SC.FilterSelectsList>
