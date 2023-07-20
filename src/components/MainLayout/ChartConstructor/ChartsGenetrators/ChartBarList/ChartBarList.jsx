@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
-import Chart from "react-apexcharts";
 import { Box } from "@mui/material";
+
+import * as SC from "./ChartBarList.styled";
 
 export const ChartBarList = ({ chartConfig, filter }) => {
   const [currentSeries, setCurrentSeries] = useState([]);
@@ -41,15 +42,7 @@ export const ChartBarList = ({ chartConfig, filter }) => {
     return <div>no data</div>;
   }
   return (
-    <Box
-      sx={{
-        backgroundColor: "rgb(237, 231, 246, 0.3)",
-        height: "100%",
-        overflow: "hidden",
-        borderRadius: "12px",
-        m: "8px",
-      }}
-    >
+    <SC.BoxChartBarListStyled>
       <Box
         sx={{
           height: "calc(100% )",
@@ -58,12 +51,7 @@ export const ChartBarList = ({ chartConfig, filter }) => {
         }}
       >
         {Array.isArray(currentSeries) && (
-          <Chart
-            style={{
-              backgroundColor: "rgb(237, 231, 246, 0.3)",
-              borderRadius: "12px 0  0 12px",
-              //   marginRight: "8px",
-            }}
+          <SC.ChartBarListStyled
             options={chartConfig.options}
             series={currentSeries}
             type={"bar"}
@@ -71,6 +59,6 @@ export const ChartBarList = ({ chartConfig, filter }) => {
           />
         )}
       </Box>
-    </Box>
+    </SC.BoxChartBarListStyled>
   );
 };

@@ -7,8 +7,10 @@ export const BoxSingleInfoStyled = styled(Box)((props) => ({
   flexDirection: "column",
   justifyContent: "space-evenly",
   alignItems: "center",
-  background: "#fff",
-  borderRadius: "20px",
+  padding: "3px",
+
+  backgroundColor: "#fff",
+  borderRadius: "17px",
 }));
 
 export const TypographyTitleStyled = styled(Typography)((props) => ({
