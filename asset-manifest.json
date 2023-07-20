@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/dashboard-ova-2/static/css/main.8ad76030.css",
-    "main.js": "/dashboard-ova-2/static/js/main.0818e24e.js",
+    "main.js": "/dashboard-ova-2/static/js/main.d22b8190.js",
     "static/media/e-UkraineHead-Regular.otf": "/dashboard-ova-2/static/media/e-UkraineHead-Regular.4e9dc7df09b113ce919f.otf",
     "static/media/e-UkraineHead-Medium.otf": "/dashboard-ova-2/static/media/e-UkraineHead-Medium.b86fdf0f27a162dd685a.otf",
     "static/media/e-UkraineHead-LOGO.otf": "/dashboard-ova-2/static/media/e-UkraineHead-LOGO.a06c46cb367e4a3c74bb.otf",
@@ -16,10 +16,10 @@
     "static/media/e-Ukraine-Light.otf": "/dashboard-ova-2/static/media/e-Ukraine-Light.051230eeb9d14f5e4305.otf",
     "index.html": "/dashboard-ova-2/index.html",
     "main.8ad76030.css.map": "/dashboard-ova-2/static/css/main.8ad76030.css.map",
-    "main.0818e24e.js.map": "/dashboard-ova-2/static/js/main.0818e24e.js.map"
+    "main.d22b8190.js.map": "/dashboard-ova-2/static/js/main.d22b8190.js.map"
   },
   "entrypoints": [
     "static/css/main.8ad76030.css",
-    "static/js/main.0818e24e.js"
+    "static/js/main.d22b8190.js"
   ]
 }
