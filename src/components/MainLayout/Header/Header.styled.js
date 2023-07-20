@@ -4,14 +4,32 @@ import IconButton from "@mui/material/IconButton";
 
 import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
-import { Box } from "@mui/material";
+import { Box, Typography } from "@mui/material";
+
+export const HeaderContainerStyled = styled(Box)(({ theme }) => ({
+  flexGrow: 1,
+  height: "86px",
+  position: "relative",
+  zIndex: 1201,
+}));
+
+export const LogoTypographyStyled = styled(Typography)(({ theme }) => ({
+  cursor: "pointer",
+  alignItems: "flex-end",
+  mr: 0,
+
+  fontFamily: "e-Ukraine Head",
+  fontSize: "20px",
+  fontWeight: 500,
+  letterSpacing: "2px",
+  textTransform: "uppercase",
+}));
 
 export const Search = styled(Box)(({ theme }) => ({
   position: "relative",
   border: "1px solid rgba(0, 0, 0, 0.2)",
   backgroundColor: "#f8fafc",
   borderRadius: "12px",
-
   width: "250px",
 
   "&:hover": {
@@ -63,26 +81,24 @@ export const MenuButton = styled(IconButton)(({ theme }) => ({
   display: "flex",
   alignItems: "center",
   justifyContent: "center",
-  color: "#5e35b1",
-  backgroundColor: "#ede7f6",
+  padding: "8px",
+  color: "#000",
   cursor: "pointer",
   borderRadius: "12px",
   overflow: "hidden",
   transition: "all 0.2s ease-in-out 0s",
+  outline: "3px solid #000",
 
   "&:hover": {
-    backgroundColor: "#5e35b1",
-    "& .MuiSvgIcon-root": {
-      color: "#ede7f6",
-    },
+    backgroundColor: "rgba(0, 0, 0, 0.027)",
   },
 }));
 
 export const MenuOpenIcon = styled(MenuIcon)(({ theme }) => ({
-  color: "#5e35b1",
-  fontSize: "1.3rem",
+  color: "#000",
+  fontSize: "1.7rem",
 }));
 export const MenuCloseIcon = styled(CloseIcon)(({ theme }) => ({
-  color: "#5e35b1",
-  fontSize: "1.3rem",
+  color: "#000",
+  fontSize: "1.7rem",
 }));

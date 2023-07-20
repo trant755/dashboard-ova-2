@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { AppBar, Box, Toolbar, Typography, Fade } from "@mui/material";
+import { AppBar, Box, Toolbar, Fade } from "@mui/material";
 
 import * as SC from "./Header.styled";
 
@@ -25,38 +25,34 @@ export default function PrimarySearchAppBar({ open, setOpen }) {
   const mobileMenuId = "primary-search-account-menu-mobile";
 
   return (
-    <Box
-      sx={{ flexGrow: 1, height: "86px", position: "relative", zIndex: 1201 }}
-    >
+    <SC.HeaderContainerStyled>
       <AppBar
         position="static"
-        sx={{ backgroundColor: "#fff", color: "#000", boxShadow: "none" }}
+        sx={{
+          color: "#000",
+          boxShadow: "none",
+          backgroundColor: "#fff",
+        }}
       >
         <Toolbar sx={{ p: 2 }}>
           <Box
             sx={{
               display: "flex",
+              alignItems: "center",
               flexDirection: { xs: "row-reverse", lg: "row" },
               gap: 2,
             }}
           >
-            <Typography
+            <SC.LogoTypographyStyled
               variant="h6"
               noWrap
               edge="start"
               component="div"
-              sx={{
-                display: { sm: `${open ? "flex" : "none"}`, lg: "flex" },
-                cursor: "pointer",
-                alignItems: "flex-end",
-                mr: 0,
-                letterSpacing: "0.4em",
-                fontSize: "1.3rem",
-              }}
+              sx={{ display: { sm: `${open ? "flex" : "none"}`, lg: "flex" } }}
               onClick={() => navigate("/")}
             >
               METRICA
-            </Typography>
+            </SC.LogoTypographyStyled>
             <SC.MenuButton
               size="medium"
               aria-label="open drawer"
@@ -86,6 +82,6 @@ export default function PrimarySearchAppBar({ open, setOpen }) {
           />
         </Toolbar>
       </AppBar>
-    </Box>
+    </SC.HeaderContainerStyled>
   );
 }
