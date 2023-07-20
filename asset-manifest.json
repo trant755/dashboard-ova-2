@@ -1,19 +1,25 @@
 {
   "files": {
-    "main.css": "/dashboard-ova-2/static/css/main.f41e94ac.css",
-    "main.js": "/dashboard-ova-2/static/js/main.ea03efdf.js",
+    "main.css": "/dashboard-ova-2/static/css/main.8ad76030.css",
+    "main.js": "/dashboard-ova-2/static/js/main.0818e24e.js",
+    "static/media/e-UkraineHead-Regular.otf": "/dashboard-ova-2/static/media/e-UkraineHead-Regular.4e9dc7df09b113ce919f.otf",
+    "static/media/e-UkraineHead-Medium.otf": "/dashboard-ova-2/static/media/e-UkraineHead-Medium.b86fdf0f27a162dd685a.otf",
+    "static/media/e-UkraineHead-LOGO.otf": "/dashboard-ova-2/static/media/e-UkraineHead-LOGO.a06c46cb367e4a3c74bb.otf",
+    "static/media/e-UkraineHead-UltraLight.otf": "/dashboard-ova-2/static/media/e-UkraineHead-UltraLight.9bf0a318d3ef5ce75c24.otf",
+    "static/media/e-UkraineHead-Thin.otf": "/dashboard-ova-2/static/media/e-UkraineHead-Thin.749c4b79826512370360.otf",
+    "static/media/e-UkraineHead-Light.otf": "/dashboard-ova-2/static/media/e-UkraineHead-Light.a4b8d387036a575cfb4e.otf",
+    "static/media/e-UkraineHead-Bold.otf": "/dashboard-ova-2/static/media/e-UkraineHead-Bold.92a625ab24ee7ea67a41.otf",
     "static/media/e-Ukraine-Medium.otf": "/dashboard-ova-2/static/media/e-Ukraine-Medium.768e3644ab7db178be11.otf",
     "static/media/e-Ukraine-Regular.otf": "/dashboard-ova-2/static/media/e-Ukraine-Regular.38805a5a6a103eb1aa7d.otf",
     "static/media/e-Ukraine-UltraLight.otf": "/dashboard-ova-2/static/media/e-Ukraine-UltraLight.0db29a0c254eda5ab03e.otf",
     "static/media/e-Ukraine-Thin.otf": "/dashboard-ova-2/static/media/e-Ukraine-Thin.30120570168ed1c0e886.otf",
     "static/media/e-Ukraine-Light.otf": "/dashboard-ova-2/static/media/e-Ukraine-Light.051230eeb9d14f5e4305.otf",
-    "static/media/e-Ukraine-Bold.otf": "/dashboard-ova-2/static/media/e-Ukraine-Bold.b0b74cb733e17bc41a86.otf",
     "index.html": "/dashboard-ova-2/index.html",
-    "main.f41e94ac.css.map": "/dashboard-ova-2/static/css/main.f41e94ac.css.map",
-    "main.ea03efdf.js.map": "/dashboard-ova-2/static/js/main.ea03efdf.js.map"
+    "main.8ad76030.css.map": "/dashboard-ova-2/static/css/main.8ad76030.css.map",
+    "main.0818e24e.js.map": "/dashboard-ova-2/static/js/main.0818e24e.js.map"
   },
   "entrypoints": [
-    "static/css/main.f41e94ac.css",
-    "static/js/main.ea03efdf.js"
+    "static/css/main.8ad76030.css",
+    "static/js/main.0818e24e.js"
   ]
 }
