@@ -4,7 +4,7 @@ import List from "@mui/material/List";
 import pages from "../../../pagesConfig";
 import { NavColapse } from "../NavColapse/NavColapse";
 import { NavNoColapse } from "../NavNoColapse/NavNoColapse";
-import { Divider } from "@mui/material";
+// import { Divider } from "@mui/material";
 
 export const NavList = ({ open, setOpen, navRoutes }) => {
   const [currentNav, setCurrentNav] = useState("");
@@ -17,15 +17,17 @@ export const NavList = ({ open, setOpen, navRoutes }) => {
         height: "100%",
         justifyContent: "flex-start",
         paddingTop: "16px",
+        paddingLeft: "20px",
       }}
     >
-      {pages.map(({ id, title, menuTitle, type, icon, children }) =>
+      {pages.map(({ id, color, menuTitle, type, icon, children }) =>
         type === "collapse" ? (
           <NavColapse
             key={id}
             id={id}
             title={menuTitle}
             icon={icon}
+            color={color}
             navRoutes={{ page, sub, group }}
             sidebarOpen={open}
             setSidebarOpen={setOpen}
@@ -38,6 +40,7 @@ export const NavList = ({ open, setOpen, navRoutes }) => {
             key={id}
             id={id}
             title={menuTitle}
+            color={color}
             icon={icon}
             open={open}
             setOpen={setOpen}
@@ -47,7 +50,6 @@ export const NavList = ({ open, setOpen, navRoutes }) => {
           />
         )
       )}
-      <Divider />
     </List>
   );
 };

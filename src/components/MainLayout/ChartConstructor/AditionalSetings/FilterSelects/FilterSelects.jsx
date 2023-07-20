@@ -6,10 +6,11 @@ export const FilterSelects = ({
   filterSelects,
   data,
   setFilter,
+  userFilter,
   setGroupFilter,
 }) => {
   const [filterValue, setFilterValue] = useState({});
-  console.log(filterSelects);
+
   useEffect(() => {
     if (Object.keys(filterValue).length > 0) {
       if (setGroupFilter) {
@@ -29,6 +30,7 @@ export const FilterSelects = ({
           filterValue={filterValue}
           setFilterValue={setFilterValue}
           data={data}
+          userFilter={userFilter}
         />
       ))}
     </SC.FilterSelectsList>

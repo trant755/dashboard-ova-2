@@ -4,7 +4,12 @@ import { Box, Typography } from "@mui/material";
 export const BoxChartContainerStyled = styled(Box)((props) => ({
   display: "flex",
   flexDirection: "column",
+  position: "relative",
   borderRadius: "12px",
+  border: "3px solid #000",
+  backgroundColor: "#fff",
+  // borderTop: "3px doted #000",
+  // borderBottom: "3px doted #000",
   overflow: "hidden",
 }));
 
@@ -12,7 +17,7 @@ export const BoxTitleContainerStyled = styled(Box)((props) => ({
   display: "flex",
   alignItems: "center",
   justifyContent: "center",
-  backgroundColor: "#fff",
+  // backgroundColor: "#fff",
   borderRadius: "12px 12px 0 0",
   padding: "10px",
 }));
@@ -29,6 +34,6 @@ export const BoxSubTitleContainerStyled = styled(Box)((props) => ({
 
 export const TitleStyled = styled(Typography)((props) => ({
   fontFamily: "e-Ukraine",
-  fontSize: "20px",
+  fontSize: "16px",
   fontWeight: "500",
 }));

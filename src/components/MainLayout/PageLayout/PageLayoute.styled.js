@@ -1,9 +1,9 @@
 import styled from "@emotion/styled";
-import { Box } from "@mui/material";
+import { Box, Tab, Tabs } from "@mui/material";
 
 export const PageLayoutContainerStyled = styled(Box)((props) => ({
   width: "100%",
-  backgroundColor: "#ffffff",
+  backgroundColor: "transparent",
   borderRadius: "12px",
   position: "relative",
 }));
@@ -14,12 +14,33 @@ export const PageLayoutTabsContainerStyled = styled(Box)((props) => ({
   alignItems: "center",
   justifyContent: "center",
   backgroundColor: "#fff",
-  borderRadius: "0 0 12px 12px",
+  borderRadius: "12px ",
   position: "relative",
-  boxShadow: "0 0 10px 0 rgba(0,0,0,0.3)",
+  border: "3px solid #000",
+  // borderTop: "none",
+  // boxShadow: "0 0 10px 0 rgba(0,0,0,0.3)",
   mr: { lg: "32px" },
   ml: { lg: "32px" },
-  // top: { sm: "-8px", lg: "-20px" },
+  marginBottom: "16px",
   left: "0",
-  top: "-20px",
+
+  // top: "-20px",
+}));
+
+export const PageLayoutTabs = styled(Tabs)((props) => ({
+  "& .MuiTabs-indicator": {
+    backgroundColor: "transparent",
+  },
+}));
+
+export const PageLayoutTab = styled(Tab)((props) => ({
+  fontFamily: "e-Ukraine",
+  fontSize: "16px",
+  fontWeight: "500",
+  color: "#000",
+  textTransform: "none",
+
+  "&.Mui-selected": {
+    color: "#000",
+  },
 }));

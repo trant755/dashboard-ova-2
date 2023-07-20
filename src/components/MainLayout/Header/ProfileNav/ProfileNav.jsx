@@ -36,7 +36,7 @@ export const ProfileNav = ({
           }}
         >
           <SC.ProfileLink href="/profile" underline="hover">
-            Увійти до кабінету
+             Особистий кабінет
           </SC.ProfileLink>
           <IconButton
             aria-describedby={"user-profile-button"}

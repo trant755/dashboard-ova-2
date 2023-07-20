@@ -5,6 +5,7 @@ import * as SC from "./ChartGroupContainer.styled";
 
 export const ChartGroupContainer = ({ chartGroup }) => {
   const [groupFilter, setGroupFilter] = useState([]);
+  const user = { access: "district" };
 
   return (
     <SC.BoxChartContainerStyled>
@@ -17,6 +18,7 @@ export const ChartGroupContainer = ({ chartGroup }) => {
             filterSelects={chartGroup.filterSelects}
             data={chartGroup.charts[0].chartConfig.data}
             setGroupFilter={setGroupFilter}
+            userFilter={user.access}
           />
         </SC.BoxSubTitleContainerStyled>
       )}

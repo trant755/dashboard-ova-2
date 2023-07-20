@@ -49,9 +49,11 @@ export const CurrentPageTitle = ({ open }) => {
     <Box sx={{ display: { sm: `${open ? "none" : "block"}`, lg: "block" } }}>
       <Typography
         sx={{
-          fontSize: { sm: "18px", lg: "26px" },
+          fontFamily: "e-Ukraine",
+          fontWeight: "700",
+          fontSize: { sm: "16px", lg: "20px" },
           textAlign: "center",
-          color: "#5e35b1",
+          color: "#000",
         }}
       >
         {currentPage}

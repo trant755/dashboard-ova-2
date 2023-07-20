@@ -17,6 +17,7 @@ const pages = [
     menuTitle: "Головна",
     type: "noCollapse",
     icon: <Home />,
+    color: "#FF6931",
 
     children: [
       {
@@ -203,6 +204,7 @@ const pages = [
     menuTitle: "Цифровізація",
     type: "collapse",
     icon: <Dvr />,
+    color: "#55A5B7",
 
     children: [
       {
@@ -368,7 +370,7 @@ const pages = [
                   },
                   {
                     id: "b",
-                    size: "ml",
+                    size: "mtl",
                     location: { x: 4, y: 0 },
                     title: "ЦНАПи",
                     chartConfig: {
@@ -591,7 +593,7 @@ const pages = [
                   },
                   {
                     id: "c",
-                    size: "m",
+                    size: "mtl",
                     location: { x: 0, y: 4 },
                     title: "Перегляд по окремим районам та громадам",
                     chartConfig: {
@@ -884,10 +886,10 @@ const pages = [
                   },
                   {
                     id: "d",
-                    size: "m",
-                    location: { x: 4, y: 4 },
+                    size: "mtl",
+                    location: { x: 0, y: 8 },
                     title:
-                      "Наявні рішення для обслуговування осіб з порушенням зору (дані очікуються)",
+                      "Наявні рішення для обслуговування осіб з порушенням зору ",
                     chartConfig: {
                       options: {
                         chart: {
@@ -1167,10 +1169,10 @@ const pages = [
                   },
                   {
                     id: "e",
-                    size: "m",
+                    size: "mtl",
                     location: { x: 8, y: 4 },
                     title:
-                      "Наявні рішення для обслуговування осіб з порушенням слуху (дані очікуються)",
+                      "Наявні рішення для обслуговування осіб з порушенням слуху ",
                     chartConfig: {
                       options: {
                         chart: {
@@ -2503,6 +2505,7 @@ const pages = [
     menuTitle: "Освіта",
     type: "collapse",
     icon: <School />,
+    color: "#AAE3E3",
 
     children: [
       {
@@ -2788,6 +2791,7 @@ const pages = [
     menuTitle: "Укриття",
     type: "collapse",
     icon: <MeetingRoom />,
+    color: "#F2C3DB",
 
     children: [
       {
@@ -2961,6 +2965,7 @@ const pages = [
     menuTitle: "Фінанси",
     type: "collapse",
     icon: <AttachMoney />,
+    color: "#FCDD3A",
 
     children: [
       {
@@ -3104,6 +3109,7 @@ const pages = [
     menuTitle: "Інфраструктура",
     type: "noCollapse",
     icon: <Apartment />,
+    color: "#82B2EF",
 
     children: [
       {
@@ -3122,6 +3128,7 @@ const pages = [
     menuTitle: "Охорона здоров'я",
     type: "noCollapse",
     icon: <MedicalServices />,
+    color: "#55B78E",
 
     children: [
       {
@@ -3140,6 +3147,7 @@ const pages = [
     menuTitle: "Економіка",
     type: "noCollapse",
     icon: <Assessment />,
+    color: "#AAE3E3",
 
     children: [
       {

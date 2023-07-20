@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Box, Tab, Tabs } from "@mui/material";
+import { Box } from "@mui/material";
 import pages from "../../../pagesConfig";
 import * as SC from "./PageLayoute.styled";
 
@@ -99,10 +99,10 @@ const PageLayoute = () => {
     <SC.PageLayoutContainerStyled>
       {currentPageConfig && (
         <>
-          <SC.PageLayoutTabsContainerStyled>
-            {currentPageConfig.children && (
+          {currentPageConfig.children && (
+            <SC.PageLayoutTabsContainerStyled>
               <Box sx={{ maxWidth: "100%" }}>
-                <Tabs
+                <SC.PageLayoutTabs
                   value={value}
                   onChange={handleChange}
                   variant="scrollable"
@@ -110,16 +110,16 @@ const PageLayoute = () => {
                   aria-label="scrollable auto tabs example"
                 >
                   {currentPageConfig?.children?.map((item) => (
-                    <Tab
+                    <SC.PageLayoutTab
                       key={item?.id}
                       label={item?.title}
                       onClick={() => navigate(item?.url)}
                     />
                   ))}
-                </Tabs>
+                </SC.PageLayoutTabs>
               </Box>
-            )}
-          </SC.PageLayoutTabsContainerStyled>
+            </SC.PageLayoutTabsContainerStyled>
+          )}
           {chartsGroups.length === 0 ? (
             <Box sx={{ mt: "20vh" }}>
               <MessageBox text={"Інформація опрацьовується"} />
@@ -133,7 +133,7 @@ const PageLayoute = () => {
             sx={{
               height: "100%",
               width: "1px",
-              boxShadow: "0 0 10px 0 rgba(0,0,0,0.3)",
+              // boxShadow: "0 0 10px 0 rgba(0,0,0,0.3)",
               // backgroundColor: "#1e67b0",
               position: "absolute",
               right: "-20px",

@@ -15,12 +15,13 @@ export const BoxTitle = styled(Box)((props) => ({
   alignItems: "center",
   justifyContent: "center",
   padding: "6px",
+  minHeight: "35px",
 }));
 
 export const TypographyStyled = styled(Typography)((props) => ({
   color: "#000",
   fontFamily: "e-Ukraine",
-  fontSize: "14px",
+  fontSize: `${props.children.length > 50 ? "12px" : "14px"}`,
   fontWeight: "500",
   textAlign: "center",
 }));

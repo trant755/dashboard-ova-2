@@ -27,7 +27,7 @@ export const closedMixin = (theme) => ({
   overflowX: "hidden",
   width: 0,
   [theme.breakpoints.up("xl")]: {
-    width: `calc(${theme.spacing(8)} + 1px)`,
+    width: `calc(${theme.spacing(8)} + 21px)`,
   },
 });
 
@@ -57,6 +57,7 @@ export const Drawer = styled(MuiDrawer, {
   left: "0",
   height: "100%",
   width: drawerWidth,
+
   flexShrink: 0,
   whiteSpace: "nowrap",
   boxSizing: "border-box",
@@ -65,6 +66,13 @@ export const Drawer = styled(MuiDrawer, {
   "  & .MuiDrawer-paper": {
     position: "relative",
     border: 0,
+
+    msOverflowStyle: "none",
+    scrollbarWidth: "none",
+
+    "&::-webkit-scrollbar": {
+      display: "none",
+    },
   },
 
   ...(open && {

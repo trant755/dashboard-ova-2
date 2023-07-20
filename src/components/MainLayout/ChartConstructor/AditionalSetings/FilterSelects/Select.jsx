@@ -7,11 +7,18 @@ import { Select as MuiSelect } from "@mui/material";
 import { SelectClone } from "./SelectClone";
 import * as SC from "./FilterSelects.styled";
 
-export const Select = ({ selectConfig, data, filterValue, setFilterValue }) => {
+export const Select = ({
+  selectConfig,
+  data,
+  filterValue,
+  userFilter,
+  setFilterValue,
+}) => {
   const [value, setValue] = useState("");
   const [currentData, setCurrentData] = useState(data);
   const { id, title, position, subSelect } = selectConfig;
-  console.log(data);
+  console.log("selectConfig", selectConfig);
+  console.log("currentData", currentData);
   useEffect(() => {
     setCurrentData(data);
   }, [data]);

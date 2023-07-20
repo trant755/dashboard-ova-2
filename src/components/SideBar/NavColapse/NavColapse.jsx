@@ -7,7 +7,6 @@ import {
   ListItemButton,
   ListItemIcon,
   ListItemText,
-  Divider,
 } from "@mui/material";
 
 import ExpandLess from "@mui/icons-material/ExpandLess";
@@ -17,6 +16,7 @@ export const NavColapse = ({
   id,
   title,
   icon,
+  color,
   children,
   sidebarOpen,
   setSidebarOpen,
@@ -36,21 +36,23 @@ export const NavColapse = ({
   }, [currentNav, id]);
 
   const handleClick = () => {
+    if (!sidebarOpen) {
+      setSidebarOpen(!sidebarOpen);
+    }
     setOpen(!open);
     setCurrentNav(id);
   };
 
   return (
     <>
-      <Divider />
       <ListItem key={id} disablePadding sx={{ display: "block" }}>
         <ListItemButton
           onClick={handleClick}
           sx={
             navRoutes.page === id
               ? {
-                  backgroundColor: "#eef2f6",
-                  color: "rgb(94, 53, 177)",
+                  backgroundColor: color,
+                  color: "#000",
                   minHeight: 48,
                   justifyContent: sidebarOpen ? "initial" : "center",
                   px: 2.5,
@@ -61,11 +63,12 @@ export const NavColapse = ({
                     fontWeight: "600",
                   },
 
-                  "&& .MuiListItemIcon-root": {
-                    color: "rgb(94, 53, 177)",
-                  },
+                  // "&& .MuiListItemIcon-root": {
+                  //   color: "rgb(94, 53, 177)",
+                  // },
                 }
               : {
+                  outline: "3px solid #000",
                   minHeight: 48,
                   justifyContent: sidebarOpen ? "initial" : "center",
                   px: 2.5,
@@ -79,6 +82,7 @@ export const NavColapse = ({
               minWidth: 0,
               mr: sidebarOpen ? 2 : "auto",
               justifyContent: "center",
+              color: "#000",
             }}
           >
             {icon}
