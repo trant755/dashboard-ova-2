@@ -19,7 +19,7 @@ export const BoxTitle = styled(Box)((props) => ({
 }));
 
 export const TypographyStyled = styled(Typography)((props) => ({
-  color: "#000",
+  color: "#fff",
   fontFamily: "e-Ukraine",
   fontSize: `${props.children.length > 50 ? "12px" : "14px"}`,
   fontWeight: "500",
@@ -97,7 +97,7 @@ export const CahrtConstructorWrapper = styled(Box)((props) => ({
   // paddingTop: "6px",
   display: "flex",
   flexDirection: "column",
-  backgroundColor: "#FF6931",
+  backgroundColor: "#55A5B7",
   borderRadius: "20px",
   overflow: "hidden",
   position: "relative",
