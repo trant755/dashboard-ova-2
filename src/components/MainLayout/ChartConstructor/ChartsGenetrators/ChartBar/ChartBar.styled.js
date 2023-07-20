@@ -4,7 +4,8 @@ import Chart from "react-apexcharts";
 
 export const BoxChartBarStyled = styled(Box)((props) => ({
   height: "100%",
-  padding: "3px",
+  padding: "3px ",
+  border: "3px solid #000",
 
   backgroundColor: "#fff",
   borderRadius: "17px",

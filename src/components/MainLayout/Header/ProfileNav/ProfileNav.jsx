@@ -1,6 +1,6 @@
 import * as SC from "./ProfileNav.styled";
 import { Box, IconButton } from "@mui/material";
-import { AccountCircle, More } from "@mui/icons-material";
+import { AccountCircle, MoreVert } from "@mui/icons-material";
 import { UserProfile } from "components/MainLayout/Header/UserProfile/UserProfile";
 import { useSelector } from "react-redux";
 
@@ -60,7 +60,7 @@ export const ProfileNav = ({
             // onClick={handleMobileMenuOpen}
             color="inherit"
           >
-            <More />
+            <MoreVert />
           </IconButton>
         </Box>
         <UserProfile
