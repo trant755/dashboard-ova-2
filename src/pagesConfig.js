@@ -3198,194 +3198,26 @@ export const metricaPages = [
 
 export const cabinetPages = [
   {
-    id: "home",
-    title: "Кабінет депутата",
-    menuTitle: "Кабінет депутата",
+    id: "messages",
+    title: "Є-Звернення",
+    menuTitle: "Є-Звернення",
     type: "noCollapse",
     icon: <Home />,
     color: "#FF6931",
 
     children: [
       {
-        id: "messages",
-        title: "Кабінет депутата",
-        menuTitle: "Кабінет депутата",
+        id: "all",
+        title: "Є-Звернення",
+        menuTitle: "Є-Звернення",
         type: "item",
-        url: "/cabinet/messages",
+        url: "/cabinet/messages/all",
         target: true,
-
-        chartsGroups: [
-          {
-            title: "Оцінка виконання завдань по структурних підрозділах",
-            charts: [
-              {
-                id: "b",
-                size: "sl",
-                location: { x: 0, y: 0 },
-                title: "Цифровізація",
-                chartConfig: {
-                  options: {
-                    chart: {
-                      id: "bar-chart",
-                    },
-                    plotOptions: {
-                      bar: {
-                        horizontal: true,
-                      },
-                    },
-
-                    xaxis: {
-                      categories: ["Виконано", "План на 01.01.2024"],
-                    },
-                  },
-                  series: [
-                    {
-                      data: [80, 100],
-                    },
-                  ],
-                  type: "bar",
-                  aditionalSetings: {
-                    singleInfo: null,
-                    filterSelects: [],
-                  },
-                },
-              },
-              {
-                id: "с",
-                size: "sl",
-                location: { x: 6, y: 0 },
-                title: "Інфраструктура",
-                chartConfig: {
-                  options: {
-                    chart: {
-                      id: "bar-chart",
-                    },
-                    plotOptions: {
-                      bar: {
-                        horizontal: true,
-                      },
-                    },
-
-                    xaxis: {
-                      categories: ["Виконано", "План на 01.01.2024"],
-                    },
-                  },
-                  series: [
-                    {
-                      data: [72, 100],
-                    },
-                  ],
-                  type: "bar",
-                  aditionalSetings: {
-                    singleInfo: null,
-                    filterSelects: [],
-                  },
-                },
-              },
-              {
-                id: "o",
-                size: "sl",
-                location: { x: 0, y: 2 },
-                title: "Охорона здоров'я",
-                chartConfig: {
-                  options: {
-                    chart: {
-                      id: "bar-chart",
-                    },
-                    plotOptions: {
-                      bar: {
-                        horizontal: true,
-                      },
-                    },
-
-                    xaxis: {
-                      categories: ["Виконано", "План на 01.01.2024"],
-                    },
-                  },
-                  series: [
-                    {
-                      data: [66, 100],
-                    },
-                  ],
-                  type: "bar",
-                  aditionalSetings: {
-                    singleInfo: null,
-                    filterSelects: [],
-                  },
-                },
-              },
-              {
-                id: "s",
-                size: "sl",
-                location: { x: 6, y: 2 },
-                title: "Освіта",
-                chartConfig: {
-                  options: {
-                    chart: {
-                      id: "bar-chart",
-                    },
-                    plotOptions: {
-                      bar: {
-                        horizontal: true,
-                      },
-                    },
-
-                    xaxis: {
-                      categories: ["Виконано", "План на 01.01.2024"],
-                    },
-                  },
-                  series: [
-                    {
-                      data: [74, 100],
-                    },
-                  ],
-                  type: "bar",
-                  aditionalSetings: {
-                    singleInfo: null,
-                    filterSelects: [],
-                  },
-                },
-              },
-              {
-                id: "t",
-                size: "sl",
-                location: { x: 0, y: 4 },
-                title: "Економіка",
-                chartConfig: {
-                  options: {
-                    chart: {
-                      id: "bar-chart",
-                    },
-                    plotOptions: {
-                      bar: {
-                        horizontal: true,
-                      },
-                    },
-
-                    xaxis: {
-                      categories: ["Виконано", "План на 01.01.2024"],
-                    },
-                  },
-                  series: [
-                    {
-                      data: [79, 100],
-                    },
-                  ],
-                  type: "bar",
-                  aditionalSetings: {
-                    singleInfo: null,
-                    filterSelects: [],
-                  },
-                },
-              },
-            ],
-          },
-        ],
       },
     ],
   },
   {
-    id: "report",
+    id: "reports",
     title: "єЗвернення",
     menuTitle: "єЗвернення",
     type: "collapse",
@@ -3398,7 +3230,7 @@ export const cabinetPages = [
         title: "ЦНАП",
         menuTitle: "ЦНАП",
         type: "item",
-        url: "/cabinet/reports",
+        url: "/cabinet/reports/cnap",
         target: true,
         children: [
           {

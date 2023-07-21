@@ -4,6 +4,7 @@ import { NavList } from "./NavList/NavList";
 import { Box } from "@mui/material";
 
 import * as SC from "./SideBar.styled";
+import { mainPages } from "../../pagesConfig";
 
 export default function MiniDrawer({ open, setOpen, subMenu }) {
   const params = useParams();
@@ -14,7 +15,12 @@ export default function MiniDrawer({ open, setOpen, subMenu }) {
       open={open}
       sx={{ paddingTop: { sm: "86px", lg: "0px" } }}
     >
-      <Box></Box>
+      {/* <NavList
+        open={open}
+        setOpen={setOpen}
+        navRoutes={params}
+        subMenu={mainPages}
+      /> */}
       <NavList
         open={open}
         setOpen={setOpen}

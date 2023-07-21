@@ -11,6 +11,8 @@ export const CurrentPageTitle = ({ open, subMenu }) => {
   useEffect(() => {
     let title = "";
     let prevPage = subMenu;
+    console.log("123123", subMenu, params);
+
     for (let i = 0; Object.keys(params).length - 1; i += 1) {
       prevPage = Array.isArray(prevPage)
         ? prevPage?.find((elem) => elem.id === Object.values(params)[i])
@@ -24,7 +26,6 @@ export const CurrentPageTitle = ({ open, subMenu }) => {
       } else {
         title = prevPage.title;
       }
-      console.log("123123", title, prevPage);
       if (prevPage && i === Object.keys(params).length - 1)
         setCurrentPage(title);
     }

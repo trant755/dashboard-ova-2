@@ -30,8 +30,8 @@ function App() {
           </Route>
         </Route>
 
-        <Route path="/cabinet" element={<CabinetPage />}>
-          <Route path="/cabinet/:sub" element={<CabinetPage />} />
+        <Route path="/cabinet/:page" element={<CabinetPage />}>
+          <Route path="/cabinet/:page/:sub" element={<CabinetPage />} />
         </Route>
 
         <Route path="404" element={<NotFound />} />
