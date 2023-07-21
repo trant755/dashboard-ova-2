@@ -2,12 +2,10 @@ import React, { useEffect, useState } from "react";
 import { Box } from "@mui/material";
 import { metricaPages } from "../../../pagesConfig";
 import * as SC from "./PageLayoute.styled";
-import { NavList } from "components/SideBar/NavList/NavList";
 
 import { useParams, useNavigate, useOutletContext } from "react-router-dom";
 import { MessageBox } from "components/MessageBox";
 import { ChartGroupContainer } from "./ChartGroupContainer/ChartGroupContainer";
-import PortalComponent from "components/PortalComponent";
 
 const PageLayoute = () => {
   const [setSubMenu] = useOutletContext();

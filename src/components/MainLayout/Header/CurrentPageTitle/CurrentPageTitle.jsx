@@ -1,9 +1,8 @@
 import { Box, Typography } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
-import { metricaPages } from "pagesConfig";
 
-export const CurrentPageTitle = ({ open }) => {
+export const CurrentPageTitle = ({ open, subMenu }) => {
   const [currentPage, setCurrentPage] = useState("");
   const { page, sub, group } = useParams();
   const navigate = useNavigate();
@@ -12,7 +11,7 @@ export const CurrentPageTitle = ({ open }) => {
     let title = "";
     let prevPage = {};
     if (page) {
-      prevPage = metricaPages.find((elem) => elem.id === page);
+      prevPage = subMenu?.find((elem) => elem.id === page);
       if (!prevPage) {
         title = "404";
         navigate("/404");
@@ -43,7 +42,7 @@ export const CurrentPageTitle = ({ open }) => {
     }
 
     setCurrentPage(title);
-  }, [currentPage, group, navigate, page, sub]);
+  }, [group, navigate, page, sub, subMenu]);
 
   return (
     <Box sx={{ display: { sm: `${open ? "none" : "block"}`, lg: "block" } }}>

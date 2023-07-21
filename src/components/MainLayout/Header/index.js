@@ -8,7 +8,7 @@ import { CurrentPageTitle } from "./CurrentPageTitle/CurrentPageTitle";
 
 import { ProfileNav } from "./ProfileNav/ProfileNav";
 
-export default function PrimarySearchAppBar({ open, setOpen }) {
+export default function PrimarySearchAppBar({ open, setOpen, subMenu }) {
   const [anchorEl, setAnchorEl] = useState(null);
   const navigate = useNavigate();
 
@@ -71,7 +71,7 @@ export default function PrimarySearchAppBar({ open, setOpen }) {
             </SC.MenuButton>
           </Box>
           <Box sx={{ flexGrow: 1 }} />
-          <CurrentPageTitle open={open} />
+          <CurrentPageTitle open={open} subMenu={subMenu} />
           <Box sx={{ flexGrow: 1 }} />
           <ProfileNav
             menuId={menuId}

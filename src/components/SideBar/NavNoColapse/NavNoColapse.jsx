@@ -31,7 +31,7 @@ export const NavNoColapse = ({
             navigate(`${url}`);
           }}
           sx={
-            navRoutes.page === id
+            Object.values(navRoutes)[0] === id
               ? {
                   backgroundColor: color,
                   color: "#000",

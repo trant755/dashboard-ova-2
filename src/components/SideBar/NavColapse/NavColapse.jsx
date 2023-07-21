@@ -49,7 +49,7 @@ export const NavColapse = ({
         <ListItemButton
           onClick={handleClick}
           sx={
-            navRoutes.page === id
+            Object.values(navRoutes)[0] === id
               ? {
                   backgroundColor: color,
                   color: "#000",
@@ -106,7 +106,8 @@ export const NavColapse = ({
                 <ListItemButton
                   key={subId}
                   sx={
-                    navRoutes.sub === subId && navRoutes.page === id
+                    Object.values(navRoutes).includes(subId) &&
+                    Object.values(navRoutes).includes(id)
                       ? { color: "rgb(94, 53, 177)", pl: 4 }
                       : { pl: 4 }
                   }

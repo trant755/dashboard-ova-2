@@ -7,7 +7,7 @@ import { NavNoColapse } from "../NavNoColapse/NavNoColapse";
 
 export const NavList = ({ open, setOpen, navRoutes, subMenu }) => {
   const [currentNav, setCurrentNav] = useState("");
-  const { page, sub, group } = navRoutes;
+
   if (subMenu)
     return (
       <List
@@ -28,7 +28,7 @@ export const NavList = ({ open, setOpen, navRoutes, subMenu }) => {
               title={menuTitle}
               icon={icon}
               color={color}
-              navRoutes={{ page, sub, group }}
+              navRoutes={navRoutes}
               sidebarOpen={open}
               setSidebarOpen={setOpen}
               children={children}
@@ -44,7 +44,7 @@ export const NavList = ({ open, setOpen, navRoutes, subMenu }) => {
               icon={icon}
               open={open}
               setOpen={setOpen}
-              navRoutes={{ page, sub, group }}
+              navRoutes={navRoutes}
               url={children[0].url}
               setCurrentNav={setCurrentNav}
             />

@@ -11,7 +11,7 @@ const SharedLayout = ({ children }) => {
 
   return (
     <Box sx={{ height: "100vh", display: "flex", flexDirection: "column" }}>
-      <Header open={open} setOpen={setOpen} />
+      <Header open={open} setOpen={setOpen} subMenu={subMenu} />
       <Box
         sx={{
           display: "flex",
