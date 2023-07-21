@@ -1,13 +1,17 @@
 import React, { useEffect, useState } from "react";
 import { Box } from "@mui/material";
-import {metricaPages} from "../../../pagesConfig";
+import { metricaPages } from "../../../pagesConfig";
 import * as SC from "./PageLayoute.styled";
+import { NavList } from "components/SideBar/NavList/NavList";
 
-import { useParams, useNavigate } from "react-router-dom";
+import { useParams, useNavigate, useOutletContext } from "react-router-dom";
 import { MessageBox } from "components/MessageBox";
 import { ChartGroupContainer } from "./ChartGroupContainer/ChartGroupContainer";
+import PortalComponent from "components/PortalComponent";
 
 const PageLayoute = () => {
+  const [setSubMenu] = useOutletContext();
+
   const [currentPage, setCurrentPage] = useState("");
   const [currentPageConfig, setCurrentPageConfig] = useState(null);
   const [chartsGroups, setChartsGroups] = useState([]);
@@ -33,6 +37,10 @@ const PageLayoute = () => {
       return;
     }
   }, [page, sub, group]);
+
+  useEffect(() => {
+    setSubMenu(metricaPages);
+  }, [setSubMenu]);
 
   useEffect(() => {
     if (currentPage) {

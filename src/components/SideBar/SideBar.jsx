@@ -1,12 +1,12 @@
 import * as React from "react";
 import { useParams } from "react-router-dom";
 import { NavList } from "./NavList/NavList";
-import { useSearchParams } from "react-router-dom";
+import { Box } from "@mui/material";
 
 import * as SC from "./SideBar.styled";
 
-export default function MiniDrawer({ open, setOpen }) {
-  const { page, sub, group } = useParams();
+export default function MiniDrawer({ open, setOpen, subMenu }) {
+  const params = useParams();
 
   return (
     <SC.Drawer
@@ -14,7 +14,13 @@ export default function MiniDrawer({ open, setOpen }) {
       open={open}
       sx={{ paddingTop: { sm: "86px", lg: "0px" } }}
     >
-      <NavList open={open} setOpen={setOpen} navRoutes={{ page, sub, group }} />
+      <Box></Box>
+      <NavList
+        open={open}
+        setOpen={setOpen}
+        navRoutes={params}
+        subMenu={subMenu}
+      />
     </SC.Drawer>
   );
 }
