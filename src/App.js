@@ -30,13 +30,8 @@ function App() {
           </Route>
         </Route>
 
-        <Route path="/cabinet" element={<Navigate to={"/cabinet/home"} />}>
-          <Route path="/cabinet/:cabinet" element={<CabinetPage />}>
-            <Route
-              path="/cabinet/:cabinet/:messages"
-              element={<CabinetPage />}
-            ></Route>
-          </Route>
+        <Route path="/cabinet" element={<CabinetPage />}>
+          <Route path="/cabinet/:sub" element={<CabinetPage />} />
         </Route>
 
         <Route path="404" element={<NotFound />} />
