@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import List from "@mui/material/List";
 
-import pages from "../../../pagesConfig";
+import { metricaPages } from "../../../pagesConfig";
 import { NavColapse } from "../NavColapse/NavColapse";
 import { NavNoColapse } from "../NavNoColapse/NavNoColapse";
 // import { Divider } from "@mui/material";
@@ -20,7 +20,7 @@ export const NavList = ({ open, setOpen, navRoutes }) => {
         paddingLeft: "20px",
       }}
     >
-      {pages.map(({ id, color, menuTitle, type, icon, children }) =>
+      {metricaPages.map(({ id, color, menuTitle, type, icon, children }) =>
         type === "collapse" ? (
           <NavColapse
             key={id}

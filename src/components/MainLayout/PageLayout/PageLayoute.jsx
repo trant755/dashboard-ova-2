@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Box } from "@mui/material";
-import pages from "../../../pagesConfig";
+import {metricaPages} from "../../../pagesConfig";
 import * as SC from "./PageLayoute.styled";
 
 import { useParams, useNavigate } from "react-router-dom";
@@ -38,7 +38,7 @@ const PageLayoute = () => {
     if (currentPage) {
       let data = {};
       if (page) {
-        data = pages.find((elem) => elem.id === page);
+        data = metricaPages.find((elem) => elem.id === page);
         if (!data) navigate("/404");
       }
       if (sub) {
@@ -62,7 +62,7 @@ const PageLayoute = () => {
     if (currentPage) {
       let data = {};
       if (page) {
-        data = pages.find((elem) => elem.id === page);
+        data = metricaPages.find((elem) => elem.id === page);
       }
       if (sub) {
         data = data.children.find((elem) => elem.id === sub);

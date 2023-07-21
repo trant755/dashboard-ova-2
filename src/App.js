@@ -19,16 +19,24 @@ function App() {
     <Routes>
       <Route path="/login" element={<Auth />} />
       <Route path="/" element={<SharedLayout />}>
-        <Route index element={<Navigate to={"/home/all"} />} />
+        <Route index element={<Navigate to={"/metrica/home/all"} />} />
 
-        <Route path="/:page" element={<PageLayoute />}>
-          <Route path="/:page/:sub" element={<PageLayoute />}>
-            <Route path="/:page/:sub/:group" element={<PageLayoute />} />
+        <Route path="/metrica/:page" element={<PageLayoute />}>
+          <Route path="/metrica/:page/:sub" element={<PageLayoute />}>
+            <Route
+              path="/metrica/:page/:sub/:group"
+              element={<PageLayoute />}
+            />
           </Route>
         </Route>
 
-        <Route path="/:cabinet" element={<CabinetPage />}>
-          <Route path="/:cabinet/:messages" element={<CabinetPage />}></Route>
+        <Route path="/cabinet" element={<Navigate to={"/cabinet/home"} />}>
+          <Route path="/cabinet/:cabinet" element={<CabinetPage />}>
+            <Route
+              path="/cabinet/:cabinet/:messages"
+              element={<CabinetPage />}
+            ></Route>
+          </Route>
         </Route>
 
         <Route path="404" element={<NotFound />} />

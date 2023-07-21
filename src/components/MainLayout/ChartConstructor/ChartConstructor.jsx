@@ -22,11 +22,11 @@ export const ChartConstructor = ({ chart, groupFilter }) => {
   return (
     <SC.CahrtConstructorWrapper>
       <SC.BoxChartContainer>
-        {chart.title && (
-          <SC.BoxTitle>
+        <SC.BoxTitle>
+          {chart.title && (
             <SC.TypographyStyled>{chart.title}</SC.TypographyStyled>
-          </SC.BoxTitle>
-        )}
+          )}
+        </SC.BoxTitle>
         {aditionalSetings && chart.chartConfig.data && (
           <AditionalSetings
             setFilter={setFilter}

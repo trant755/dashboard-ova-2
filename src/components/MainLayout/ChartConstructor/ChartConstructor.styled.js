@@ -93,7 +93,7 @@ export const TypographyStyled = styled(Typography)((props) => ({
 export const CahrtConstructorWrapper = styled(Box)((props) => ({
   width: "100%",
   height: "100%",
-  padding: "3px 12px",
+  padding: "0px 12px 12px 12px",
   // paddingTop: "6px",
   display: "flex",
   flexDirection: "column",

@@ -7,10 +7,23 @@ import {
   Home,
   MeetingRoom,
   AttachMoney,
+  QueryStats,
 } from "@mui/icons-material";
 import { nanoid } from "nanoid";
 
-const pages = [
+export const mainPages = [
+  {
+    id: "metrica",
+    title: "METRICA",
+    menuTitle: "METRICA",
+    url: "/metrica",
+    type: "noCollapse",
+    icon: <QueryStats />,
+    color: "#FF6931",
+  },
+];
+
+export const metricaPages = [
   {
     id: "home",
     title: "Головна",
@@ -25,7 +38,7 @@ const pages = [
         title: "Головна",
         menuTitle: "Головна",
         type: "item",
-        url: "home/all",
+        url: "/metrica/home/all",
         target: true,
 
         chartsGroups: [
@@ -212,7 +225,7 @@ const pages = [
         title: "ЦНАП",
         menuTitle: "ЦНАП",
         type: "item",
-        url: "/digitalization/cnap",
+        url: "/metrica/digitalization/cnap",
         target: true,
         children: [
           {
@@ -2528,7 +2541,7 @@ const pages = [
         title: "Є-документи",
         menuTitle: "Є-документи",
         type: "item",
-        url: "/education/e-document",
+        url: "/metrica/education/e-document",
         target: true,
         chartsGroups: [
           {
@@ -2536,7 +2549,7 @@ const pages = [
             charts: [
               {
                 id: "a",
-                size: "ml",
+                size: "mtl",
                 location: { x: 0, y: 0 },
                 title: "е-Щоденник",
                 chartConfig: {
@@ -2667,7 +2680,7 @@ const pages = [
               },
               {
                 id: "b",
-                size: "ml",
+                size: "mtl",
                 location: { x: 6, y: 0 },
                 title: "е-Журнал",
                 chartConfig: {
@@ -2818,7 +2831,7 @@ const pages = [
         title: "Придатність укриттів",
         menuTitle: "Придатність укриттів",
         type: "item",
-        url: "/shelters/suitability",
+        url: "/metrica/shelters/suitability",
         target: true,
 
         chartsGroups: [
@@ -2994,7 +3007,7 @@ const pages = [
         title: "Рейтинг голів громад",
         menuTitle: "Рейтинг голів громад",
         type: "item",
-        url: "/finances/heads-rating",
+        url: "/metrica/finances/heads-rating",
         target: true,
 
         chartsGroups: [
@@ -3138,7 +3151,7 @@ const pages = [
         title: "Інфраструктура - загальна",
         menuTitle: "Загальна",
         type: "item",
-        url: "/infrastructure/all",
+        url: "/metrica/infrastructure/all",
         target: true,
       },
     ],
@@ -3157,7 +3170,7 @@ const pages = [
         title: "Охорона здоров'я - загальна",
         menuTitle: "Загальна",
         type: "item",
-        url: "/healthcare/all",
+        url: "/metrica/healthcare/all",
         target: true,
       },
     ],
@@ -3176,11 +3189,9 @@ const pages = [
         title: "Економіка - загальна",
         menuTitle: "Загальна",
         type: "item",
-        url: "/economy/all",
+        url: "/metrica/economy/all",
         target: true,
       },
     ],
   },
 ];
-
-export default pages;

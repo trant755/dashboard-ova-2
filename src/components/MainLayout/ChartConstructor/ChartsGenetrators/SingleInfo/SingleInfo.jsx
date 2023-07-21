@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+
 import * as SC from "./SingleInfo.styled";
 
 export const SingleInfo = ({ chartConfig, filter }) => {

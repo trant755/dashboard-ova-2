@@ -1,4 +1,3 @@
-import { useState, useEffect } from "react";
 import { Responsive, WidthProvider } from "react-grid-layout";
 import { Box } from "@mui/material";
 import { useRef } from "react";
@@ -7,29 +6,14 @@ const ResponsiveGridLayout = WidthProvider(Responsive);
 const breakpoints = { lg: 1200, md: 768, sm: 768, xs: 480, xxs: 0 };
 const cols = { lg: 12, md: 12, sm: 12, xs: 8, xxs: 4 };
 
-const ResponsiveLayout = ({ layout, setLayout, children }) => {
-  const [isDruggable, setIsDruggable] = useState(true);
+const ResponsiveLayout = ({ isDragable, layout, setLayout, children }) => {
   const wrapper = useRef(null);
-
-  // для тесту
-  useEffect(() => {
-    if (window.innerWidth < 768) {
-      setIsDruggable(false);
-    } else {
-      setIsDruggable(true);
-    }
-  }, []);
-  // збереження зміни координат
-  // const onLayoutChange = (newLayout) => {
-  //   setLayout(newLayout);
-  //   localStorage.setItem("layout", JSON.stringify(newLayout));
-  // };
 
   return (
     <Box ref={wrapper}>
       <ResponsiveGridLayout
         style={{ padding: "0" }}
-        isDraggable={isDruggable}
+        isDraggable={isDragable}
         className="layout"
         layouts={{
           lg: layout,

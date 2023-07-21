@@ -2,7 +2,6 @@ import React, { useEffect } from "react";
 import { Box, AppBar, Tabs, Tab, Typography } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
 import SwipeableViews from "react-swipeable-views";
-import { useParams, useNavigate } from "react-router-dom";
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;

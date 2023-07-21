@@ -20,7 +20,7 @@ const containerSizes = {
 
 // const layout = [{ i: "a", x: 0, y: 0, w: 1, h: 2 }];
 
-export const LayoutGrid = ({ charts: newCharts, groupFilter }) => {
+export const LayoutGrid = ({ charts: newCharts, groupFilter, isDragable }) => {
   const [layout, setLayout] = useState([]);
   const [charts, setCharts] = useState([]);
 
@@ -50,7 +50,11 @@ export const LayoutGrid = ({ charts: newCharts, groupFilter }) => {
     }
   }, [charts]);
   return (
-    <ResponsiveLayout layout={layout} setLayout={setLayout}>
+    <ResponsiveLayout
+      isDragable={isDragable}
+      layout={layout}
+      setLayout={setLayout}
+    >
       {layout.map((elem, index) => (
         <Box key={elem.i}>
           {charts && charts.length > 0 && (

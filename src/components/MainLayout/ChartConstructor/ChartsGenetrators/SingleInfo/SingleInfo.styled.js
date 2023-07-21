@@ -1,7 +1,8 @@
 import styled from "@emotion/styled";
-import { Box, Typography } from "@mui/material";
+import { Typography } from "@mui/material";
+import * as Base from "../ChartGenerators.styled";
 
-export const BoxSingleInfoStyled = styled(Box)((props) => ({
+export const BoxSingleInfoStyled = styled(Base.BoxChartBarStyled)((props) => ({
   height: "100%",
   display: "flex",
   flexDirection: "column",
@@ -14,12 +15,14 @@ export const BoxSingleInfoStyled = styled(Box)((props) => ({
 }));
 
 export const TypographyTitleStyled = styled(Typography)((props) => ({
+  fontFamily: "e-Ukraine",
   fontSize: "24px",
   textAlign: "center",
   color: "#000",
 }));
 
 export const TypographySubTitleStyled = styled(Typography)((props) => ({
+  fontFamily: "e-Ukraine",
   fontSize: "26px",
   textAlign: "center",
   color: "#000",

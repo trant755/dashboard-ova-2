@@ -1,8 +1,8 @@
 import styled from "@emotion/styled";
-import { Box } from "@mui/system";
-import Chart from "react-apexcharts";
 
-export const BoxDonutStyled = styled(Box)((props) => ({
+import * as Base from "../ChartGenerators.styled";
+
+export const BoxDonutStyled = styled(Base.BoxChartBarStyled)((props) => ({
   height: "100%",
   padding: "3px",
 
@@ -10,7 +10,7 @@ export const BoxDonutStyled = styled(Box)((props) => ({
   borderRadius: "17px",
 }));
 
-export const DonutBarStyled = styled(Chart)((props) => ({
+export const DonutBarStyled = styled(Base.ChartBarStyled)((props) => ({
   backgroundColor: "#fff",
   borderRadius: "20px",
 }));

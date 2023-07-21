@@ -1,7 +1,7 @@
 import { Box, Typography } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
-import pages from "pagesConfig";
+import { metricaPages } from "pagesConfig";
 
 export const CurrentPageTitle = ({ open }) => {
   const [currentPage, setCurrentPage] = useState("");
@@ -12,7 +12,7 @@ export const CurrentPageTitle = ({ open }) => {
     let title = "";
     let prevPage = {};
     if (page) {
-      prevPage = pages.find((elem) => elem.id === page);
+      prevPage = metricaPages.find((elem) => elem.id === page);
       if (!prevPage) {
         title = "404";
         navigate("/404");
