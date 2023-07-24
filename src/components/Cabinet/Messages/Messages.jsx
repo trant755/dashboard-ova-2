@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 
 import * as SC from "./Messages.styled";
+import MessageItem from "./MessageItem/MessageItem";
 
 export const Messages = () => {
   const [
@@ -42,15 +43,9 @@ export const Messages = () => {
   return (
     <SC.MessagesContainer>
       <SC.MessagesList>
-        {messages.map((elem) => {
-          return (
-            <SC.MessagesItem key={elem.id}>
-              <SC.MessagesDescription>{elem.sender}</SC.MessagesDescription>
-              <SC.MessagesTitle>{elem.title}</SC.MessagesTitle>
-              <SC.MessagesDescription>{elem.date}</SC.MessagesDescription>
-            </SC.MessagesItem>
-          );
-        })}
+        {messages.map((item) => (
+          <MessageItem key={item.id} message={item} />
+        ))}
       </SC.MessagesList>
     </SC.MessagesContainer>
   );

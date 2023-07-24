@@ -8,7 +8,11 @@ import {
   MeetingRoom,
   AttachMoney,
   QueryStats,
+  MailOutline,
+  Subject,
+  HowToVote,
 } from "@mui/icons-material";
+
 import { nanoid } from "nanoid";
 
 export const mainPages = [
@@ -3202,7 +3206,7 @@ export const cabinetPages = [
     title: "єЗвернення",
     menuTitle: "єЗвернення",
     type: "noCollapse",
-    icon: <Home />,
+    icon: <MailOutline />,
     color: "#FF6931",
 
     children: [
@@ -3221,7 +3225,7 @@ export const cabinetPages = [
     title: "єКлопотання",
     menuTitle: "єКлопотання",
     type: "noCollapsecollapse",
-    icon: <Dvr />,
+    icon: <Subject />,
     color: "#55A5B7",
 
     children: [
@@ -3242,7 +3246,7 @@ export const cabinetPages = [
     title: "єПетиція",
     menuTitle: "єПетиція",
     type: "noCollapse",
-    icon: <School />,
+    icon: <HowToVote />,
     color: "#AAE3E3",
 
     children: [
