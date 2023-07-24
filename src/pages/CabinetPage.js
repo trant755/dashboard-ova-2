@@ -1,22 +1,9 @@
 import React from "react";
 import { Box } from "@mui/material";
 
-import Messages from "components/Cabinet/Messages/Messages";
-import Reports from "components/Cabinet/Reports/Reports";
-import Petitions from "components/Cabinet/Petitions/Petitions";
-
-import { useOutletContext, useParams } from "react-router-dom";
-import { cabinetPages } from "../pagesConfig";
-import { useEffect } from "react";
+import CabinetLayout from "components/Cabinet/CabinetLayout";
 
 export const CabinetPage = () => {
-  const { page } = useParams();
-  const [setSubMenu] = useOutletContext();
-
-  useEffect(() => {
-    setSubMenu(cabinetPages);
-  }, [setSubMenu]);
-
   return (
     <Box
       sx={{
@@ -25,9 +12,7 @@ export const CabinetPage = () => {
         alignItems: "center",
       }}
     >
-      {page === "messages" && <Messages />}
-      {page === "reports" && <Reports />}
-      {page === "petitions" && <Petitions />}
+      <CabinetLayout />
     </Box>
   );
 };

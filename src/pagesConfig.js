@@ -3217,7 +3217,7 @@ export const cabinetPages = [
     ],
   },
   {
-    id: "reports",
+    id: "solicitations",
     title: "єКлопотання",
     menuTitle: "єКлопотання",
     type: "noCollapsecollapse",
@@ -3230,7 +3230,7 @@ export const cabinetPages = [
         title: "єКлопотання",
         menuTitle: "єКлопотання",
         type: "item",
-        url: "/cabinet/reports/all",
+        url: "/cabinet/solicitations/all",
         target: true,
         children: [],
       },

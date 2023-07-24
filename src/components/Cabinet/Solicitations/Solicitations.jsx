@@ -1,7 +1,7 @@
 import React from "react";
 import { Box } from "@mui/material";
 
-export const Petitions = () => {
+export const Solicitations = () => {
   return (
     <Box
       sx={{
@@ -16,9 +16,9 @@ export const Petitions = () => {
         border: "3px solid #000",
       }}
     >
-      <h2>Petitions component</h2>
+      <h2>Solicitations component</h2>
     </Box>
   );
 };
 
-export default Petitions;
+export default Solicitations;

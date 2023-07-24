@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import { Box } from "@mui/material";
+
+import * as SC from "./Messages.styled";
 
 export const Messages = () => {
   const [
@@ -39,86 +40,19 @@ export const Messages = () => {
   ]);
 
   return (
-    <Box
-      sx={{
-        width: "100%",
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-      }}
-    >
-      <ul
-        style={{
-          width: "100%",
-          height: "75vh",
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-          padding: "20px",
-          margin: "0",
-          borderRadius: "12px",
-          border: "3px solid #000",
-        }}
-      >
+    <SC.MessagesContainer>
+      <SC.MessagesList>
         {messages.map((elem) => {
           return (
-            <li
-              key={elem.id}
-              style={{
-                width: "100%",
-                padding: "16px",
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                gap: "56px",
-
-                borderBottom: "3px solid #000",
-                boxShadow: "0px 4px 8px rgba(0, 0, 0, 0.20)",
-              }}
-            >
-              <p
-                style={{
-                  color: "rgba(0, 0, 0, 0.50)",
-                  fontFamily: "e-Ukraine",
-                  fontSize: "14px",
-                  fontStyle: "normal",
-                  fontWeight: "500",
-                  lineHeight: "normal",
-                }}
-              >
-                {elem.sender}
-              </p>
-              <p
-                style={{
-                  color: "#000",
-                  fontFamily: "e-Ukraine",
-                  fontSize: "14px",
-                  fontStyle: "normal",
-                  fontWeight: "700",
-                  lineHeight: "normal",
-                  textTransform: "capitalize",
-                }}
-              >
-                {elem.title}
-              </p>
-              <p
-                style={{
-                  marginLeft: "auto",
-                  color: "rgba(0, 0, 0, 0.50)",
-                  fontFamily: "e-Ukraine",
-                  fontSize: "14px",
-                  fontStyle: "normal",
-                  fontWeight: "500",
-                  lineHeight: "normal",
-                }}
-              >
-                {elem.date}
-              </p>
-            </li>
+            <SC.MessagesItem key={elem.id}>
+              <SC.MessagesDescription>{elem.sender}</SC.MessagesDescription>
+              <SC.MessagesTitle>{elem.title}</SC.MessagesTitle>
+              <SC.MessagesDescription>{elem.date}</SC.MessagesDescription>
+            </SC.MessagesItem>
           );
         })}
-      </ul>
-    </Box>
+      </SC.MessagesList>
+    </SC.MessagesContainer>
   );
 };
 
