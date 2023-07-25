@@ -11,13 +11,18 @@ const MessageItem = ({ message }) => {
     setShowMessagesDetails(!showMessagesDetails);
   };
 
+  const dateTransformer = (dateString) => {
+    const date = new Date(dateString);
+    return date.toLocaleString();
+  };
+
   return (
     <>
       <SC.MessagesItem onClick={onMessageClick}>
         <SC.MessagesDescription>{message.sender}</SC.MessagesDescription>
         <SC.MessagesTitle>{message.title}</SC.MessagesTitle>
         <SC.MessagesDescription style={{ marginLeft: "auto" }}>
-          {message.date}
+          {dateTransformer(message.createdAt)}
         </SC.MessagesDescription>
       </SC.MessagesItem>
 

@@ -10,8 +10,8 @@ const ModalMessages = ({ message, onClose }) => {
       </button>
 
       <div>
-        <h1>{title}</h1>
         <h3>{sender}</h3>
+        <h2>{title}</h2>
         <p>{date}</p>
       </div>
 
