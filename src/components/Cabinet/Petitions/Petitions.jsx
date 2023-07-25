@@ -9,6 +9,7 @@ export const Petitions = () => {
         height: "75vh",
         display: "flex",
         flexDirection: "column",
+        justifyContent: "center",
         alignItems: "center",
         padding: "20px",
         margin: "0",
@@ -16,7 +17,7 @@ export const Petitions = () => {
         border: "3px solid #000",
       }}
     >
-      <h2>Petitions component</h2>
+      <h2>Компонент в розробці</h2>
     </Box>
   );
 };

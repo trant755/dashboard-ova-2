@@ -9,6 +9,7 @@ export const Solicitations = () => {
         height: "75vh",
         display: "flex",
         flexDirection: "column",
+        justifyContent: "center",
         alignItems: "center",
         padding: "20px",
         margin: "0",
@@ -16,7 +17,7 @@ export const Solicitations = () => {
         border: "3px solid #000",
       }}
     >
-      <h2>Solicitations component</h2>
+      <h2>Компонент в розробці</h2>
     </Box>
   );
 };

@@ -28,7 +28,10 @@ export const MessagesTitle = styled("p")((props) => ({
   fontStyle: "normal",
   fontWeight: "700",
   lineHeight: "normal",
-  textTransform: "capitalize",
+
+  overflow: "hidden",
+  whiteSpace: "nowrap",
+  textOverflow: "ellipsis",
 }));
 
 export const MessagesDescription = styled("p")((props) => ({
@@ -38,4 +41,8 @@ export const MessagesDescription = styled("p")((props) => ({
   fontStyle: "normal",
   fontWeight: "500",
   lineHeight: "normal",
+
+  overflow: "hidden",
+  whiteSpace: "nowrap",
+  textOverflow: "ellipsis",
 }));

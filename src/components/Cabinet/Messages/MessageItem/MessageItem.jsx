@@ -19,7 +19,9 @@ const MessageItem = ({ message }) => {
   return (
     <>
       <SC.MessagesItem onClick={onMessageClick}>
-        <SC.MessagesDescription>{message.sender}</SC.MessagesDescription>
+        <SC.MessagesDescription style={{ width: "200px" }}>
+          {message.sender}
+        </SC.MessagesDescription>
         <SC.MessagesTitle>{message.title}</SC.MessagesTitle>
         <SC.MessagesDescription style={{ marginLeft: "auto" }}>
           {dateTransformer(message.createdAt)}
