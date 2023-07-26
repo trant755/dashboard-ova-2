@@ -20,7 +20,7 @@ const MessageItem = ({ message }) => {
     <>
       <SC.MessagesItem onClick={onMessageClick}>
         <SC.MessagesDescription style={{ width: "200px" }}>
-          {message.sender}
+          {message.senderName}
         </SC.MessagesDescription>
         <SC.MessagesTitle>{message.title}</SC.MessagesTitle>
         <SC.MessagesDescription style={{ marginLeft: "auto" }}>
