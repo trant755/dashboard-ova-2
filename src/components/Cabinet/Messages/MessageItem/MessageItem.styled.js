@@ -8,7 +8,6 @@ export const MessagesItem = styled("li")((props) => ({
   justifyContent: "flex-start",
   gap: "56px",
 
-  borderRadius: "12px 12px 0 0",
   borderBottom: "3px solid #000",
   boxShadow: "0px 4px 8px rgba(0, 0, 0, 0.20)",
   cursor: "pointer",

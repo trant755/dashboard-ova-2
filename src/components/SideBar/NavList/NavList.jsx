@@ -3,7 +3,6 @@ import List from "@mui/material/List";
 
 import { NavColapse } from "../NavColapse/NavColapse";
 import { NavNoColapse } from "../NavNoColapse/NavNoColapse";
-// import { Divider } from "@mui/material";
 
 export const NavList = ({ open, setOpen, navRoutes, subMenu }) => {
   const [currentNav, setCurrentNav] = useState("");
@@ -17,8 +16,7 @@ export const NavList = ({ open, setOpen, navRoutes, subMenu }) => {
           display: "flex",
           flexDirection: "column",
           justifyContent: "flex-start",
-          paddingTop: "16px",
-          paddingLeft: "20px",
+          padding: "12px 0px 12px 20px",
         }}
       >
         {subMenu.map(({ id, color, menuTitle, type, icon, children, url }) =>

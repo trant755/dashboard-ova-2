@@ -1,11 +1,13 @@
-import { Box, Typography } from "@mui/material";
+import { Box, Typography, useMediaQuery } from "@mui/material";
 import * as SC from "./ChartGroupContainer.styled";
 
 export const DNDSwitch = ({ isDragable, setIsDragable }) => {
+  const isSmallScreen = useMediaQuery("(max-width: 899px)");
+
   return (
     <Box
       sx={{
-        display: "flex",
+        display: isSmallScreen ? "none" : "flex",
         alignItems: "center",
         gap: "8px",
       }}

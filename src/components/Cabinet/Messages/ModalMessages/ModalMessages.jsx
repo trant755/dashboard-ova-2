@@ -5,9 +5,9 @@ const ModalMessages = ({ message, onClose }) => {
 
   return (
     <SC.ModalMessagesWindow>
-      <button type="button" onClick={onClose}>
-        Close modal
-      </button>
+      <SC.MenuButton size="medium" sx={{ mr: 1 }} onClick={onClose}>
+        <SC.MenuCloseIcon />
+      </SC.MenuButton>
 
       <div>
         <h3>{sender}</h3>

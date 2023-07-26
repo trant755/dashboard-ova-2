@@ -90,9 +90,9 @@ export const NavColapse = ({
           <ListItemText primary={title} sx={{ opacity: sidebarOpen ? 1 : 0 }} />
           {sidebarOpen &&
             (open ? (
-              <ExpandLess sx={{ fontSize: "1.4rem" }} />
+              <ExpandLess sx={{ fontSize: "1.4rem", borderRadius: "12px" }} />
             ) : (
-              <ExpandMore sx={{ fontSize: "1.4rem" }} />
+              <ExpandMore sx={{ fontSize: "1.4rem", borderRadius: "12px" }} />
             ))}
         </ListItemButton>
         {sidebarOpen && (
