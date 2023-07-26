@@ -2,29 +2,52 @@ import { useState } from "react";
 
 import { Modal } from "components/Modal/Modal";
 import ModalMessages from "../ModalMessages/ModalMessages";
+import { useMediaQuery } from "@mui/material";
 import * as SC from "./MessageItem.styled";
+
+import { dateTransformer } from "helpers/dateTranformer";
 
 const MessageItem = ({ message }) => {
   const [showMessagesDetails, setShowMessagesDetails] = useState(false);
+
+  const isSmallScreen = useMediaQuery("(max-width: 767px)");
+  const isMediumScreen = useMediaQuery("(max-width: 899px)");
 
   const onMessageClick = () => {
     setShowMessagesDetails(!showMessagesDetails);
   };
 
-  const dateTransformer = (dateString) => {
-    const date = new Date(dateString);
-    return date.toLocaleString();
-  };
-
   return (
     <>
       <SC.MessagesItem onClick={onMessageClick}>
-        <SC.MessagesDescription style={{ width: "200px" }}>
-          {message.senderName}
+        <SC.MessagesDescription
+          style={{
+            width: isSmallScreen ? "120px" : "220px",
+            fontSize: isSmallScreen ? "12px" : "14px",
+          }}
+        >
+          {isMediumScreen
+            ? message.senderName.substring(0, 15)
+            : message.senderName}
         </SC.MessagesDescription>
-        <SC.MessagesTitle>{message.title}</SC.MessagesTitle>
-        <SC.MessagesDescription style={{ marginLeft: "auto" }}>
-          {dateTransformer(message.createdAt)}
+        <SC.MessagesTitle
+          style={{
+            fontSize: isSmallScreen ? "12px" : "14px",
+          }}
+        >
+          {isMediumScreen
+            ? message.title.substring(0, 30) + "..."
+            : message.title}
+        </SC.MessagesTitle>
+        <SC.MessagesDescription
+          style={{
+            marginLeft: "auto",
+            fontSize: isSmallScreen ? "12px" : "14px",
+          }}
+        >
+          {isSmallScreen
+            ? dateTransformer(message.createdAt).substring(0, 10)
+            : dateTransformer(message.createdAt)}
         </SC.MessagesDescription>
       </SC.MessagesItem>
 

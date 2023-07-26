@@ -6,7 +6,7 @@ export const MessagesItem = styled("li")((props) => ({
   display: "flex",
   alignItems: "center",
   justifyContent: "flex-start",
-  gap: "56px",
+  gap: "20px",
 
   borderBottom: "3px solid #000",
   boxShadow: "0px 4px 8px rgba(0, 0, 0, 0.20)",
@@ -23,7 +23,6 @@ export const MessagesItem = styled("li")((props) => ({
 export const MessagesTitle = styled("p")((props) => ({
   color: "#000",
   fontFamily: "e-Ukraine",
-  fontSize: "14px",
   fontStyle: "normal",
   fontWeight: "700",
   lineHeight: "normal",
@@ -36,12 +35,7 @@ export const MessagesTitle = styled("p")((props) => ({
 export const MessagesDescription = styled("p")((props) => ({
   color: "rgba(0, 0, 0, 0.50)",
   fontFamily: "e-Ukraine",
-  fontSize: "14px",
   fontStyle: "normal",
   fontWeight: "500",
   lineHeight: "normal",
-
-  overflow: "hidden",
-  whiteSpace: "nowrap",
-  textOverflow: "ellipsis",
 }));

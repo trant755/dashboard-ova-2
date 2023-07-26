@@ -55,7 +55,7 @@ export const UserProfile = ({
             }}
           >
             <SC.UserName>
-              {`${user.lastName} ${user.firstName} ${
+              {`${user.firstName} ${user.lastName} ${
                 user.surname && user.surname
               }`}
             </SC.UserName>
@@ -83,7 +83,7 @@ export const UserProfile = ({
               </SC.InfoText>
             </SC.UserInfoWrapper>
             <SC.UserInfoWrapper>
-              <SC.InfoLabel>Район:</SC.InfoLabel>
+              <SC.InfoLabel>Громада:</SC.InfoLabel>
               <SC.InfoText>
                 {user.hromada ? user.hromada : "Інформація відсутня"}
               </SC.InfoText>
