@@ -16,7 +16,7 @@ export const Login = () => {
     onSubmit: async (values) => {
       try {
         await login(values);
-        navigate("/home/all");
+        navigate("/metrica/home/all");
       } catch (error) {
         console.log(error);
       }
