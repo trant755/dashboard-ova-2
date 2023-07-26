@@ -2,7 +2,7 @@ import * as React from "react";
 import { useParams } from "react-router-dom";
 import { NavList } from "./NavList/NavList";
 
-import { Box, Divider } from "@mui/material";
+import { Box } from "@mui/material";
 
 import * as SC from "./SideBar.styled";
 import { mainPages } from "../../pagesConfig";
