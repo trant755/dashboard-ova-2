@@ -81,7 +81,7 @@ export const MenuButton = styled(IconButton)(({ theme }) => ({
   display: "flex",
   alignItems: "center",
   justifyContent: "center",
-  padding: "8px",
+  padding: "6px",
   color: "#000",
   cursor: "pointer",
   borderRadius: "12px",
@@ -96,9 +96,9 @@ export const MenuButton = styled(IconButton)(({ theme }) => ({
 
 export const MenuOpenIcon = styled(MenuIcon)(({ theme }) => ({
   color: "#000",
-  fontSize: "1.7rem",
+  fontSize: "1.2rem",
 }));
 export const MenuCloseIcon = styled(CloseIcon)(({ theme }) => ({
   color: "#000",
-  fontSize: "1.7rem",
+  fontSize: "1.2rem",
 }));

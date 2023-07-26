@@ -2,7 +2,7 @@ import * as React from "react";
 import { useParams } from "react-router-dom";
 import { NavList } from "./NavList/NavList";
 
-import { Box } from "@mui/material";
+import { Box, Divider } from "@mui/material";
 
 import * as SC from "./SideBar.styled";
 import { mainPages } from "../../pagesConfig";
@@ -23,6 +23,8 @@ export default function MiniDrawer({ open, setOpen, subMenu }) {
           navRoutes={params}
           subMenu={mainPages}
         />
+
+        <Divider sx={{ marginLeft: "20px" }} />
 
         <NavList
           open={open}
