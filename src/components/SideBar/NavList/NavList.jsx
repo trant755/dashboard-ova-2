@@ -8,19 +8,20 @@ import { NavNoColapse } from "../NavNoColapse/NavNoColapse";
 export const NavList = ({ open, setOpen, navRoutes, subMenu }) => {
   const [currentNav, setCurrentNav] = useState("");
 
+  console.log("subMENU", subMenu);
+
   if (subMenu)
     return (
       <List
         sx={{
           display: "flex",
           flexDirection: "column",
-          height: "100%",
           justifyContent: "flex-start",
           paddingTop: "16px",
           paddingLeft: "20px",
         }}
       >
-        {subMenu.map(({ id, color, menuTitle, type, icon, children }) =>
+        {subMenu.map(({ id, color, menuTitle, type, icon, children, url }) =>
           type === "collapse" ? (
             <NavColapse
               key={id}
@@ -33,6 +34,7 @@ export const NavList = ({ open, setOpen, navRoutes, subMenu }) => {
               setSidebarOpen={setOpen}
               children={children}
               currentNav={currentNav}
+              url={url}
               setCurrentNav={setCurrentNav}
             />
           ) : (
@@ -45,7 +47,8 @@ export const NavList = ({ open, setOpen, navRoutes, subMenu }) => {
               open={open}
               setOpen={setOpen}
               navRoutes={navRoutes}
-              url={children[0].url}
+              url={url}
+              children={children}
               setCurrentNav={setCurrentNav}
             />
           )

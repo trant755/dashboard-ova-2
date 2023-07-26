@@ -11,6 +11,7 @@ export const NavNoColapse = ({
   color,
   open,
   setOpen,
+  children,
   url,
   navRoutes,
   setCurrentNav,
@@ -28,7 +29,7 @@ export const NavNoColapse = ({
             }
             setCurrentNav(id);
             setOpen(!open);
-            navigate(`${url}`);
+            navigate(`${children ? children[0].url : url}`);
           }}
           sx={
             Object.values(navRoutes)[0] === id
