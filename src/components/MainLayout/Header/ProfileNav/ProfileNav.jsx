@@ -35,7 +35,7 @@ export const ProfileNav = ({
             gap: "8px",
           }}
         >
-          <SC.ProfileLink href="/profile" underline="hover">
+          <SC.ProfileLink href="/cabinet/messages/all" underline="hover">
              Особистий кабінет
           </SC.ProfileLink>
           <IconButton
