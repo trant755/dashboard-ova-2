@@ -48,7 +48,7 @@ export const UserInfoWrapper = styled.li`
 `;
 
 export const InfoLabel = styled.p`
-  flex-basis: 50%;
+  flex-basis: 30%;
   font-family: "e-Ukraine";
   font-weight: 400;
   font-size: 14px;
@@ -57,7 +57,7 @@ export const InfoLabel = styled.p`
 `;
 
 export const InfoText = styled.p`
-  flex-basis: 50%;
+  flex-basis: 70%;
   font-family: "e-Ukraine";
   font-weight: 400;
   font-size: 14px;
