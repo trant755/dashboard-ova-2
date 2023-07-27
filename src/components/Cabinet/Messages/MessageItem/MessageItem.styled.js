@@ -4,8 +4,8 @@ export const MessagesItem = styled("li")((props) => ({
   width: "100%",
   padding: "16px",
   display: "flex",
-  alignItems: "center",
-  justifyContent: "flex-start",
+  alignItems: "flex-start",
+  justifyContent: "space-between",
   gap: "20px",
 
   borderBottom: "3px solid #000",

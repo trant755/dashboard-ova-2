@@ -6,6 +6,9 @@ export const MessagesContainer = styled(Box)((props) => ({
   display: "flex",
   flexDirection: "column",
   alignItems: "center",
+
+  overflow: "hidden",
+  // overflowY: "scroll",
 }));
 
 export const MessagesList = styled("ul")((props) => ({
