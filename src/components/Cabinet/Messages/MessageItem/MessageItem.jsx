@@ -5,7 +5,7 @@ import ModalMessages from "../ModalMessages/ModalMessages";
 import { useMediaQuery } from "@mui/material";
 import * as SC from "./MessageItem.styled";
 
-import { dateTransformer } from "helpers/dateTranformer";
+import { dateTransformer } from "components/helpers/workWithDate";
 
 const MessageItem = ({ message }) => {
   const [showMessagesDetails, setShowMessagesDetails] = useState(false);
@@ -27,8 +27,8 @@ const MessageItem = ({ message }) => {
           }}
         >
           {isMediumScreen
-            ? message.senderName.substring(0, 15)
-            : message.senderName}
+            ? message.senderName.substring(0, 10)
+            : message.senderName.substring(0, 17)}
         </SC.MessagesDescription>
         <SC.MessagesTitle
           style={{
