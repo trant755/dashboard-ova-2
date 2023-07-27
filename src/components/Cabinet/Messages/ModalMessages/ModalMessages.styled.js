@@ -19,7 +19,7 @@ export const ModalMessagesWindow = styled("div")((props) => ({
 
 export const MenuButton = styled(IconButton)(({ theme }) => ({
   position: "absolute",
-  top: "20px",
+  // top: "20px",
   right: "14px",
   margin: 0,
 

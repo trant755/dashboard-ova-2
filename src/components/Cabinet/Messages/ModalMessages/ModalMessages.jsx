@@ -1,9 +1,9 @@
-import { dateTransformer } from "helpers/dateTranformer";
+import { dateTransformer } from "components/helpers/workWithDate";
 import { Box, useMediaQuery } from "@mui/material";
 import * as SC from "./ModalMessages.styled";
 
 const ModalMessages = ({ message, onClose }) => {
-  const { title, senderName, senderEmail, createdAt } = message;
+  const { title, text, senderName, senderEmail, createdAt } = message;
 
   const isSmallScreen = useMediaQuery("(max-width: 767px)");
 
@@ -11,36 +11,47 @@ const ModalMessages = ({ message, onClose }) => {
     <SC.ModalMessagesWindow
       style={{
         width: isSmallScreen ? "300px" : "704px",
-        padding: isSmallScreen ? "20px 20px" : "64px 32px",
+        padding: isSmallScreen ? "40px 20px 20px 20px" : "64px 32px",
       }}
     >
-      <SC.MenuButton onClick={onClose}>
+      <SC.MenuButton
+        style={{ top: isSmallScreen ? "12px" : "20px" }}
+        onClick={onClose}
+      >
         <SC.MenuCloseIcon />
       </SC.MenuButton>
 
-      <SC.ModalTitle>{title}</SC.ModalTitle>
+      <SC.ModalTitle style={{ fontSize: isSmallScreen ? "12px" : "14px" }}>
+        {title}
+      </SC.ModalTitle>
 
       <SC.SenderInfoBox>
         <Box>
-          <SC.SenderTitle>{senderName}</SC.SenderTitle>
-          <SC.SenderLink href={`mailto:${senderEmail}`}>
+          <SC.SenderTitle style={{ fontSize: isSmallScreen ? "12px" : "14px" }}>
+            {senderName}
+          </SC.SenderTitle>
+          <SC.SenderLink
+            href={`mailto:${senderEmail}`}
+            style={{ fontSize: isSmallScreen ? "12px" : "14px" }}
+          >
             &#60;{senderEmail}&#62;
           </SC.SenderLink>
         </Box>
 
-        <p style={{ color: "#000", fontFamily: "e-Ukraine" }}>
+        <p
+          style={{
+            color: "#000",
+            fontFamily: "e-Ukraine",
+            fontSize: isSmallScreen ? "12px" : "14px",
+          }}
+        >
           {dateTransformer(createdAt)}
         </p>
       </SC.SenderInfoBox>
 
       <div>
-        <SC.SenderText>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae
-          accusantium adipisci animi, quae fugiat eum, eveniet autem consectetur
-          ipsa nobis labore corrupti molestiae explicabo, ad delectus veniam.
-          Officia quasi non eos sit excepturi quam accusamus unde, vitae eaque
-          quod, totam vel nemo itaque et omnis voluptatibus deleniti. Aliquam,
-          cupiditate ut?
+        <SC.SenderText style={{ fontSize: isSmallScreen ? "12px" : "14px" }}>
+          {text}
         </SC.SenderText>
       </div>
     </SC.ModalMessagesWindow>
