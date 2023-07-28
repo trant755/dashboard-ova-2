@@ -21,7 +21,7 @@ export const FilterSelects = ({
 
       while (currentObj.target !== user.access) {
         currentObj = currentObj.subSelect;
-
+        if (!currentObj) return;
         position = currentObj.position;
       }
       setUserFilterPosition(position);

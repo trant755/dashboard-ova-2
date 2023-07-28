@@ -6,6 +6,8 @@ import { getDepMessages } from "API/depCabinet/depMessages";
 import { useSelector } from "react-redux";
 import { selectToken } from "redux/auth/authSlice";
 
+import { compareCreatedAt } from "components/helpers/workWithDate";
+
 export const Messages = () => {
   const token = useSelector(selectToken);
 
@@ -25,7 +27,7 @@ export const Messages = () => {
   return (
     <SC.MessagesContainer>
       <SC.MessagesList>
-        {userMessages.map((item) => (
+        {userMessages.sort(compareCreatedAt).map((item) => (
           <MessageItem key={item.id} message={item} />
         ))}
       </SC.MessagesList>
