@@ -11,7 +11,6 @@ export const CurrentPageTitle = ({ open, subMenu }) => {
   useEffect(() => {
     let title = "";
     let prevPage = subMenu;
-    console.log("123123", subMenu, params);
 
     for (let i = 0; Object.keys(params).length - 1; i += 1) {
       prevPage = Array.isArray(prevPage)
@@ -32,7 +31,7 @@ export const CurrentPageTitle = ({ open, subMenu }) => {
   }, [navigate, params, subMenu]);
   console.log("currentPage", currentPage);
   return (
-    <Box sx={{ display: { sm: `${open ? "none" : "block"}`, lg: "block" } }}>
+    <Box sx={{ display: { xs: `${open ? "none" : "block"}`, lg: "block" } }}>
       <Typography
         sx={{
           fontFamily: "e-Ukraine",

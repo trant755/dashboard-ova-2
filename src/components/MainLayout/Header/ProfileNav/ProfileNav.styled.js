@@ -19,14 +19,19 @@ export const LoginBtn = styled(Link)`
   font-size: 14px;
   line-height: normal;
 
-  min-width: 116px;
-
   background-color: #fff;
   border: 3px solid #000;
-  border-radius: 20px;
-  padding: 8px 16px;
+  border-radius: 8px;
+  padding: 6px 6px;
 
   transition: all 250ms ease-in-out;
+
+  @media screen and (min-width: 767px) {
+    border-radius: 20px;
+
+    padding: 8px 16px;
+    min-width: 116px;
+  }
 
   &:hover {
     background-color: #000;

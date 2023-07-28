@@ -16,7 +16,7 @@ export const NavList = ({ open, setOpen, navRoutes, subMenu }) => {
           display: "flex",
           flexDirection: "column",
           justifyContent: "flex-start",
-          padding: "12px 0px 12px 20px",
+          // padding: "12px 0px 12px 20px",
         }}
       >
         {subMenu.map(({ id, color, menuTitle, type, icon, children, url }) =>

@@ -24,7 +24,7 @@ const SharedLayout = ({ children }) => {
           sx={{
             display: "flex",
             flexGrow: 1,
-            overflow: "scroll",
+            overflowY: "scroll",
           }}
         >
           <Box
@@ -38,9 +38,12 @@ const SharedLayout = ({ children }) => {
               // border: "3px solid #000",
               height: "max-content",
               minHeight: "100%",
-              padding: { sm: "8px", lg: "20px" },
-              // marginTop: "4px",
-              marginRight: "16px",
+              padding: {
+                xs: "8px",
+                lg: ` ${open ? "13px 20px 20px 0" : "13px 20px 20px 20px"}`,
+                xl: "13px 20px 20px 0",
+              },
+              marginRight: { xl: "16px" },
               borderRadius: { lg: "12px" },
               borderBottomLeftRadius: "0",
               borderBottomRightRadius: "0",

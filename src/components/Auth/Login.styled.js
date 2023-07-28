@@ -6,6 +6,7 @@ export const LoginWrapper = styled.div`
   align-items: center;
   justify-content: center;
   padding: 32px;
+  width: 710px;
 
   gap: 32px;
 
@@ -27,6 +28,9 @@ export const LoginForm = styled.form`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+
+  width: 100%;
+
   gap: 32px;
 `;
 
@@ -37,7 +41,7 @@ export const LoginInput = styled.input`
   font-weight: 400;
   line-height: normal;
 
-  width: 640px;
+  width: 100%;
   padding: 8px 16px 8px 80px;
   border-radius: 20px;
   height: 56px;

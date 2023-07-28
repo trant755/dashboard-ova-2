@@ -1,24 +1,28 @@
 import * as SC from "./ProfileNav.styled";
-import { Box, IconButton } from "@mui/material";
-import { AccountCircle, MoreVert } from "@mui/icons-material";
-import { UserProfile } from "components/MainLayout/Header/UserProfile/UserProfile";
+import { Box, IconButton, useMediaQuery } from "@mui/material";
+import { AccountCircle } from "@mui/icons-material";
+import { UserProfile } from "components/MainLayout/Header/ProfileNav/UserProfile/UserProfile";
 import { useSelector } from "react-redux";
+import { Login } from "@mui/icons-material";
+import { MobileProfileMenu } from "./MobileProfileMenu/MobileProfileMenu";
 
 export const ProfileNav = ({
   menuId,
-  handleProfileMenuOpen,
   mobileMenuId,
+  handleProfileMenuOpen,
   anchorEl,
   handleMobileMenuClose,
 }) => {
   const isLogin = Boolean(useSelector((state) => state.auth.token));
+  const isMobile = useMediaQuery((theme) => theme.breakpoints.down("lg"));
+  const open = Boolean(anchorEl);
 
   if (!isLogin)
     return (
       <>
         <Box>
           <SC.LoginBtn href="/login" underline="none">
-            Вхід
+            {isMobile ? <Login sx={{ fontSize: "20px" }} /> : "Вхід"}
           </SC.LoginBtn>
         </Box>
       </>
@@ -36,14 +40,14 @@ export const ProfileNav = ({
           }}
         >
           <SC.ProfileLink href="/cabinet/messages/all" underline="hover">
-             Особистий кабінет
+            Особистий кабінет
           </SC.ProfileLink>
           <IconButton
             aria-describedby={"user-profile-button"}
             size="large"
             edge="end"
             aria-label="account of current user"
-            aria-controls={menuId}
+            aria-controls={open ? menuId : undefined}
             aria-haspopup="true"
             onClick={handleProfileMenuOpen}
             color="inherit"
@@ -51,18 +55,12 @@ export const ProfileNav = ({
             <AccountCircle />
           </IconButton>
         </Box>
-        <Box sx={{ display: { xs: "flex", md: "none" } }}>
-          <IconButton
-            size="large"
-            aria-label="show more"
-            aria-controls={mobileMenuId}
-            aria-haspopup="true"
-            // onClick={handleMobileMenuOpen}
-            color="inherit"
-          >
-            <MoreVert />
-          </IconButton>
-        </Box>
+        <MobileProfileMenu
+          handleProfileMenuOpen={handleProfileMenuOpen}
+          anchorEl={anchorEl}
+          mobileMenuId={mobileMenuId}
+          handleMobileMenuClose={handleMobileMenuClose}
+        />
         <UserProfile
           id={"user-profile-button"}
           anchorEl={anchorEl}

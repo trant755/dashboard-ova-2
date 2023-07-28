@@ -10,6 +10,7 @@ export const Auth = () => {
         alignItems: "center",
         justifyContent: "center",
         height: "100vh",
+        padding: "20px",
       }}
     >
       <Login />

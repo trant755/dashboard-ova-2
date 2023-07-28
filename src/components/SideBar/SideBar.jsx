@@ -24,7 +24,16 @@ export default function MiniDrawer({ open, setOpen, subMenu }) {
           subMenu={mainPages}
         />
 
-        <Divider sx={{ marginLeft: "20px" }} />
+        <Divider
+          sx={{
+            height: "3px",
+            backgroundColor: "#000",
+            borderRadius: "20px",
+            margin: "10px 0px",
+            marginLeft: "10px",
+            marginRight: "10px",
+          }}
+        />
 
         <NavList
           open={open}

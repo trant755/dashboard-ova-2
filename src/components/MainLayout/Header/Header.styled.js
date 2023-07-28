@@ -9,6 +9,8 @@ import { Box, Typography } from "@mui/material";
 export const HeaderContainerStyled = styled(Box)(({ theme }) => ({
   flexGrow: 1,
   height: "86px",
+  display: "flex",
+  alignItems: "center",
   position: "relative",
   zIndex: 1201,
 }));
@@ -84,7 +86,7 @@ export const MenuButton = styled(IconButton)(({ theme }) => ({
   padding: "6px",
   color: "#000",
   cursor: "pointer",
-  borderRadius: "12px",
+  borderRadius: "6px",
   overflow: "hidden",
   transition: "all 0.2s ease-in-out 0s",
   outline: "3px solid #000",

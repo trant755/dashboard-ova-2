@@ -20,7 +20,7 @@ export const mainPages = [
     id: "metrica",
     title: "METRICA",
     menuTitle: "METRICA",
-    url: "/metrica",
+    url: "/metrica/home/all",
     type: "noCollapse",
     icon: <QueryStats />,
     color: "#FF6931",

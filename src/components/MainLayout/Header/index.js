@@ -75,8 +75,8 @@ export default function PrimarySearchAppBar({ open, setOpen, subMenu }) {
           <Box sx={{ flexGrow: 1 }} />
           <ProfileNav
             menuId={menuId}
-            handleProfileMenuOpen={handleProfileMenuOpen}
             mobileMenuId={mobileMenuId}
+            handleProfileMenuOpen={handleProfileMenuOpen}
             anchorEl={anchorEl}
             handleMobileMenuClose={handleMobileMenuClose}
           />
