@@ -1,7 +1,6 @@
 import React from "react";
 import {
   Box,
-  Avatar,
   Menu,
   MenuItem,
   ListItemIcon,
@@ -9,15 +8,38 @@ import {
   IconButton,
 } from "@mui/material";
 
-import { PersonAdd, Settings, Logout, MoreVert } from "@mui/icons-material";
+import { Logout, MoreVert, AccountCircle } from "@mui/icons-material";
+import { useNavigate } from "react-router-dom";
+import { useLogoutMutation } from "redux/auth/authAPI";
 
-export const MobileProfileMenu = ({
-  anchorEl,
-  handleProfileMenuOpen,
-  handleMobileMenuClose,
-  mobileMenuId,
-}) => {
+export const MobileProfileMenu = ({ mobileMenuId }) => {
+  const [anchorEl, setAnchorEl] = React.useState(null);
+  const navigate = useNavigate();
+  const [logout, { isLoading }] = useLogoutMutation();
+
   const open = Boolean(anchorEl);
+
+  const handleClick = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
+
+  const logoutHandler = async () => {
+    try {
+      await logout();
+      handleClose();
+      navigate("/login");
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  const ProfileLinKHandler = () => {
+    handleClose();
+    navigate("/cabinet/messages/all");
+  };
 
   return (
     <React.Fragment>
@@ -27,7 +49,7 @@ export const MobileProfileMenu = ({
           aria-label="show more"
           aria-controls={open ? mobileMenuId : undefined}
           aria-haspopup="true"
-          onClick={handleProfileMenuOpen}
+          onClick={handleClick}
           color="inherit"
         >
           <MoreVert />
@@ -37,19 +59,19 @@ export const MobileProfileMenu = ({
         anchorEl={anchorEl}
         id={mobileMenuId}
         open={open}
-        onClose={handleMobileMenuClose}
-        onClick={handleMobileMenuClose}
+        onClose={handleClose}
+        onClick={handleClose}
         PaperProps={{
           elevation: 0,
           sx: {
             overflow: "visible",
             filter: "drop-shadow(0px 2px 8px rgba(0,0,0,0.32))",
+            borderRadius: "20px",
+            padding: "8px",
             mt: 1.5,
-            "& .MuiAvatar-root": {
-              width: 32,
-              height: 32,
-              ml: -0.5,
-              mr: 1,
+            "& .MuiListItemIcon-root": {
+              minWidth: "auto",
+              marginRight: "16px",
             },
             "&:before": {
               content: '""',
@@ -68,30 +90,43 @@ export const MobileProfileMenu = ({
         transformOrigin={{ horizontal: "right", vertical: "top" }}
         anchorOrigin={{ horizontal: "right", vertical: "bottom" }}
       >
-        <MenuItem onClick={handleMobileMenuClose}>
-          <Avatar /> Profile
-        </MenuItem>
-        <MenuItem onClick={handleMobileMenuClose}>
-          <Avatar /> My account
-        </MenuItem>
-        <Divider />
-        <MenuItem onClick={handleMobileMenuClose}>
+        <MenuItem
+          sx={{
+            fontFamily: "e-Ukraine",
+            fontWeight: "regular",
+            fontSize: "16px",
+            color: "#000",
+          }}
+          onClick={ProfileLinKHandler}
+        >
           <ListItemIcon>
-            <PersonAdd fontSize="small" />
+            <AccountCircle sx={{ fontSize: "20px", color: "#000" }} />
           </ListItemIcon>
-          Add another account
+          Особистий кабінет
         </MenuItem>
-        <MenuItem onClick={handleMobileMenuClose}>
+        <Divider
+          sx={{
+            height: "3px",
+            backgroundColor: "#000",
+            mr: "16px",
+            ml: "16px",
+          }}
+        />
+        <MenuItem
+          sx={{
+            fontFamily: "e-Ukraine",
+            fontWeight: "regular",
+            fontSize: "16px",
+            color: "#000",
+          }}
+          onClick={logoutHandler}
+        >
           <ListItemIcon>
-            <Settings fontSize="small" />
+            <Logout
+              sx={{ fontSize: "20px", fontWeight: "700", color: "#000" }}
+            />
           </ListItemIcon>
-          Settings
-        </MenuItem>
-        <MenuItem onClick={handleMobileMenuClose}>
-          <ListItemIcon>
-            <Logout fontSize="small" />
-          </ListItemIcon>
-          Logout
+          Вихід
         </MenuItem>
       </Menu>
     </React.Fragment>

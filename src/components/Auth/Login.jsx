@@ -18,7 +18,7 @@ export const Login = () => {
         await login(values);
         navigate("/metrica/home/all");
       } catch (error) {
-        console.log(error);
+        console.log("error", error);
       }
     },
   });

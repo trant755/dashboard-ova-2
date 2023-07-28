@@ -89,7 +89,7 @@ export const MenuButton = styled(IconButton)(({ theme }) => ({
   borderRadius: "6px",
   overflow: "hidden",
   transition: "all 0.2s ease-in-out 0s",
-  outline: "3px solid #000",
+  border: "3px solid #000",
 
   "&:hover": {
     backgroundColor: "rgba(0, 0, 0, 0.027)",
