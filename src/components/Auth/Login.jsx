@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 import { LoaderBig } from "components/Loader";
 
 export const Login = () => {
-  const [login, { isLoading }] = useLoginMutation();
+  const [login, { isLoading, isSuccess }] = useLoginMutation();
   const navigate = useNavigate();
 
   const formik = useFormik({
@@ -15,10 +15,10 @@ export const Login = () => {
     },
     onSubmit: async (values) => {
       try {
-        await login(values);
+        await login(values).unwrap();
         navigate("/metrica/home/all");
       } catch (error) {
-        console.log("error", error);
+        console.log(error);
       }
     },
   });
@@ -49,3 +49,10 @@ export const Login = () => {
     </SC.LoginWrapper>
   );
 };
+
+fetch("https://api.github.com/users/andrii-kovalenko/repos", {
+  method: "POST",
+  body: JSON.stringify({
+    name: "test",
+  }),
+});
