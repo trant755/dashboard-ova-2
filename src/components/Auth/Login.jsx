@@ -49,10 +49,3 @@ export const Login = () => {
     </SC.LoginWrapper>
   );
 };
-
-fetch("https://api.github.com/users/andrii-kovalenko/repos", {
-  method: "POST",
-  body: JSON.stringify({
-    name: "test",
-  }),
-});
